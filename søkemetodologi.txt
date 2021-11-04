@@ -1,0 +1,30 @@
+arrayexpress:
+microrna lung cancer
+
+omicsdi:
+//mirna lung cancer AND (diagnosis OR detection)
+//Homo Sapiens
+"lung cancer" AND TAXONOMY: 9606 AND -"breast cancer" AND (mirna OR microrna) AND (serum OR plasma OR "whole blood")
+Homo Sapiens
+
+Omnibus:
+(mirna OR microrna) AND "lung cancer" AND (diagnosis OR detection) 
+
+
+google scholar:
+(mirna OR microRNA) AND "lung cancer" AND (serum OR plasma OR "whole blood") AND -"breast cancer" AND -"ovarian cancer" AND -"gastric cancer" AND -prognosis AND -survival
+
+
+sources in Wang (2019)
+
+Pubmed:
+(lung OR pulmonary OR NSCLC) and (tumor OR cancer OR carcinoma) and (microRNA* OR miRNA* OR miR*) and (diagnosis OR biomarker OR detection) and (serum or plasma or "whole blood")
+(lung OR pulmonary OR NSCLC) and (tumor OR cancer OR carcinoma) and (microRNA* OR miRNA* OR miR*) and (diagnosis OR biomarker OR detection) and (serum or plasma or "whole blood")
+
+Seleksjon:
+-Plasma, helblod eller serum
+-4 eller flere typer miRNA
+-Både syke og kontroll
+-Engelsk
+
+Er på 578

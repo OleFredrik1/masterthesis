@@ -1,0 +1,113 @@
+\chapter{Appendices}
+\label{cha:appendices}
+
+\section{PCA plots of the datasets}
+\iffalse
+\newcommand{\pcaplotstudy}[1]{\begin{subfigure}[b]{0.5\textwidth}
+    \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}
+    \begin{axis}[
+        xlabel={Principal Component 1},
+        ylabel={Principal Component 2},
+    ]
+    \addplot[
+        scatter,only marks,scatter src=explicit symbolic,
+        scatter/classes={
+            Control={green},
+            Cancer={red}
+        },
+        table/col sep=comma,
+        mark size=1pt
+    ]
+    table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/#1.csv};
+    \legend{Control,Cancer}
+    \end{axis}
+    \end{tikzpicture}}
+    \caption{PCA of \citet{#1}}
+    \label{fig:pca_#1}
+    \end{subfigure}
+}
+
+\foreach[count=\i] \studya in \studies{
+    \pgfmathparse{mod(\i, 2) == 1 ? 1 : 0}
+    \ifthenelse{\pgfmathresult > 0}{
+        \begin{figure}
+        \ifthenelse{\i > 1}{
+        \ContinuedFloat}{}
+        \pcaplotstudy{\studya}
+        \foreach[count=\j] \studyb in \studies{\pgfmathparse{\i+1 == \j ? 1 : 0}\ifthenelse{\pgfmathresult > 0}{\pcaplotstudy{\studyb}}{}}
+        \end{figure}
+    }{}
+}
+\fi
+
+\section{Log fold-change correlation between studies}
+\begin{sidewaystable}
+\begin{pycode}
+import pandas as pd
+df = pd.read_csv("tables/FoldChangeCorrelation.csv", index_col=0)
+print("\\begin{tabular}{r*{\\studylen}{c}} & ")
+print(" & ".join(f"\\citet{{{study}}}" for study in df.columns))
+print("\\\\\hline")
+for row in df:
+    print(f"\\citet{{{row}}} & ")
+    print(" & ".join(s[:3] if not "-" in s else s[:4] for s in df[row]))
+    print("\\\\")
+print("\\end{tabular}")
+\end{pycode}
+\end{sidewaystable}
+
+
+\section{Log fold-change correlation plots}
+
+\newcommand{\correlationplot}[5]{\begin{subfigure}[b]{0.5\textwidth}
+    \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}
+    \begin{axis}[
+        name=boundry,
+        x label style={at={(0.5,-0.1)},anchor=north},
+        y label style={at={(-0.1,.5)},rotate=90,anchor=south},
+        axis lines=middle,
+        xmin=-#3,
+        xmax=#3,
+        ymin=-#3,
+        ymax=#3
+    ]
+    \addplot[
+        scatter,only marks,
+        table/col sep=comma,
+        mark size=1pt,
+        scatter/use mapped color={draw=red, fill=red}
+    ]
+    table[x={Fold change A},y={Fold change B}]{tables/FoldChangeScatter/#1_v_#2.csv};
+    \addplot+[blue,no marks,line width=2.0pt]{#4 * x};
+    \end{axis}
+    \node[draw, anchor=north east] at (boundry.north east) {$r = #5$};
+    \end{tikzpicture}}
+    \caption{Log fold-change correlation between \citet{#1} and \citet{#2}}
+    \label{fig:correlation_#1_#2}
+    \end{subfigure}
+}
+
+\begin{pycode}
+import pandas as pd
+from scipy.stats.stats import pearsonr
+from sklearn.linear_model import LinearRegression
+plots = os.listdir("./tables/FoldChangeScatter")
+for i, plot in enumerate(plots):
+    df = pd.read_csv("./tables/FoldChangeScatter/" + plot)
+    m = df.abs().max().max() + 0.5
+    r = round(pearsonr(df["Fold change A"], df["Fold change B"])[0], 2)
+    linreg = LinearRegression(fit_intercept=False)
+    linreg.fit(df["Fold change A"].to_numpy().reshape(-1, 1), df["Fold change B"])
+    c = linreg.coef_[0]
+    plot = plot[:-4]
+    study1, study2 = plot.split("_v_")
+    if i % 4 == 0:
+        print("\\begin{figure}")
+        if i > 0:
+            print("\\ContinuedFloat")
+    print(f"\\correlationplot{{{study1}}}{{{study2}}}{{{m}}}{{{c}}}{{{r}}}")
+    if i % 4 == 3 or i + 1 == len(plots):
+        print("\\end{figure}\\clearpage")
+\end{pycode}

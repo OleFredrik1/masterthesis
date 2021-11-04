@@ -1,0 +1,51 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: apalike.bst
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+Database file #1: bibtex/references.bib
+Warning--I didn't find a database entry for "Fehlman2020"
+Warning--I didn't find a database entry for "Yao2020"
+You've used 24 entries,
+            1935 wiz_defined-function locations,
+            647 strings with 12904 characters,
+and the built_in function-call counts, 15596 in all, are:
+= -- 1335
+> -- 1317
+< -- 0
++ -- 505
+- -- 498
+* -- 1668
+:= -- 2827
+add.period$ -- 72
+call.type$ -- 24
+change.case$ -- 369
+chr.to.int$ -- 23
+cite$ -- 24
+duplicate$ -- 336
+empty$ -- 712
+format.name$ -- 522
+if$ -- 2816
+int.to.chr$ -- 2
+int.to.str$ -- 0
+missing$ -- 24
+newline$ -- 123
+num.names$ -- 72
+pop$ -- 321
+preamble$ -- 1
+purify$ -- 369
+quote$ -- 0
+skip$ -- 240
+stack$ -- 0
+substring$ -- 829
+swap$ -- 24
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 144
+warning$ -- 0
+while$ -- 85
+width$ -- 0
+write$ -- 314
+(There were 2 warnings)

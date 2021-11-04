@@ -1,0 +1,10 @@
+Hi,
+
+I am working on a research project where we collect datasets concerning circulating miRNA with the purpose of diagnosing lung cancer. The goal is a meta-analysis where we look at the diagnostic value when several datasets are combined into a larger dataset.
+In that regard, I was wondering if we could get access to the raw measured miRNA values for the samples in your paper:
+"" ()
+
+We would be really grateful for your help!
+
+Regards,
+Ole Fredrik Borgundvåg Berg
