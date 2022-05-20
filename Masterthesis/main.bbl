@@ -1,0 +1,453 @@
+\begin{thebibliography}{}
+
+\bibitem[Abdollahi et~al., 2019]{Abdollahi2019}
+Abdollahi, A., Rahmati, S., Ghaderi, B., Sigari, N., Nikkhoo, B., Sharifi, K.,
+  and Abdi, M. (2019).
+\newblock A combined panel of circulating {{microRNA}} as a diagnostic tool for
+  detection of the non-small cell lung cancer.
+\newblock {\em QJM: An International Journal of Medicine}, 112(10):779--785.
+
+\bibitem[{American Cancer Society}, 2019]{nsclcvsclc2}
+{American Cancer Society} (2019).
+\newblock What {{Is Lung Cancer}}? | {{Types}} of {{Lung Cancer}}.
+\newblock https://www.cancer.org/cancer/lung-cancer/about/what-is.html.
+
+\bibitem[{American Cancer Society}, 2021]{cancertreatment}
+{American Cancer Society} (2021).
+\newblock Non-small {{Cell Lung Cancer Treatment}} by {{Stage}}.
+\newblock
+  https://www.cancer.org/cancer/lung-cancer/treating-non-small-cell/by-stage.html.
+
+\bibitem[Asakura et~al., 2020]{Asakura2020}
+Asakura, K., Kadota, T., Matsuzaki, J., Yoshida, Y., Yamamoto, Y., Nakagawa,
+  K., Takizawa, S., Aoki, Y., Nakamura, E., Miura, J., Sakamoto, H., Kato, K.,
+  Watanabe, S.-i., and Ochiya, T. (2020).
+\newblock A {{miRNA-based}} diagnostic model predicts resectable lung cancer in
+  humans with high accuracy.
+\newblock {\em Communications Biology}, 3(1):1--9.
+
+\bibitem[Berg, 2021]{forprosjekt}
+Berg, O. F.~B. (2021).
+\newblock Circulating {{miRNA}} and lung cancer: - an analysis of available
+  data.
+
+\bibitem[Bernstein, 2019]{cancerstages}
+Bernstein, S. (2019).
+\newblock Lung {{Cancer Stages}}: {{Why}} and {{How Your Cancer Is Staged}}.
+\newblock https://www.webmd.com/lung-cancer/guide/lung-cancer-stages.
+
+\bibitem[Bianchi et~al., 2011]{Bianchi2011}
+Bianchi, F., Nicassio, F., Marzi, M., Belloni, E., Dall'Olio, V., Bernard, L.,
+  Pelosi, G., Maisonneuve, P., Veronesi, G., and Di~Fiore, P.~P. (2011).
+\newblock A serum circulating {{miRNA}} diagnostic test to identify
+  asymptomatic high-risk individuals with early stage lung cancer.
+\newblock {\em EMBO Molecular Medicine}, 3(8):495--503.
+
+\bibitem[Boeri et~al., 2011]{Boeri2011}
+Boeri, M., Verri, C., Conte, D., Roz, L., Modena, P., Facchinetti, F.,
+  Calabr{\`o}, E., Croce, C.~M., Pastorino, U., and Sozzi, G. (2011).
+\newblock {{MicroRNA}} signatures in tissues and plasma predict development and
+  prognosis of computed tomography detected lung cancer.
+\newblock {\em Proceedings of the National Academy of Sciences},
+  108(9):3713--3718.
+
+\bibitem[Bonferroni, 1936]{bonferroni}
+Bonferroni, C.~E. (1936).
+\newblock {\em {Teoria statistica delle classi e calcolo delle probabilit\`a}}.
+\newblock {Seeber}.
+
+\bibitem[{Cancer Registry of Norway}, 2021]{kreftnorge}
+{Cancer Registry of Norway} (2021).
+\newblock Cancer in {{Norway}} 2020 - {{Cancer}} incidence, mortality, survival
+  and prevalence in {{Norway}}.
+
+\bibitem[Chang et~al., 2010]{rbf}
+Chang, Y.-W., Hsieh, C.-J., Chang, K.-W., Ringgaard, M., and Lin, C.-J. (2010).
+\newblock Training and {{Testing Low-degree Polynomial Data Mappings}} via
+  {{Linear SVM}}.
+\newblock {\em The Journal of Machine Learning Research}, 11:1471--1490.
+
+\bibitem[Chen and Guestrin, 2016]{xgboost}
+Chen, T. and Guestrin, C. (2016).
+\newblock {{XGBoost}}: {{A Scalable Tree Boosting System}}.
+\newblock {\em Proceedings of the 22nd ACM SIGKDD International Conference on
+  Knowledge Discovery and Data Mining}, pages 785--794.
+
+\bibitem[Chen et~al., 2019]{Chen2019}
+Chen, X., Jin, Y., and Feng, Y. (2019).
+\newblock Evaluation of {{Plasma Extracellular Vesicle MicroRNA Signatures}}
+  for {{Lung Adenocarcinoma}} and {{Granuloma With Monte-Carlo Feature
+  Selection Method}}.
+\newblock {\em Frontiers in Genetics}, 10:367.
+
+\bibitem[Ciupka, 2020]{nsclcvsclc}
+Ciupka, B. (2020).
+\newblock Small {{Cell Lung Cancer}} vs. {{Non-small Cell Lung Cancer}}:
+  {{What}}'s the {{Difference}}?
+
+\bibitem[Cleveland, 1979]{loess}
+Cleveland, W.~S. (1979).
+\newblock Robust {{Locally Weighted Regression}} and {{Smoothing
+  Scatterplots}}.
+\newblock {\em Journal of the American Statistical Association},
+  74(368):829--836.
+
+\bibitem[Correia et~al., 2017]{mirnabiomarker}
+Correia, C.~N., Nalpas, N.~C., McLoughlin, K.~E., Browne, J.~A., Gordon, S.~V.,
+  MacHugh, D.~E., and Shaughnessy, R.~G. (2017).
+\newblock Circulating {{microRNAs}} as {{Potential Biomarkers}} of {{Infectious
+  Disease}}.
+\newblock {\em Frontiers in Immunology}, 8:118.
+
+\bibitem[Cortes and Vapnik, 1995]{svm}
+Cortes, C. and Vapnik, V. (1995).
+\newblock Support-vector networks.
+\newblock {\em Machine Learning}, 20(3):273--297.
+
+\bibitem[Donati et~al., 2019]{mrna_baseline}
+Donati, S., Ciuffi, S., and Brandi, M.~L. (2019).
+\newblock Human {{Circulating miRNAs Real-time qRT-PCR-based Analysis}}: {{An
+  Overview}} of {{Endogenous Reference Genes Used}} for {{Data Normalization}}.
+\newblock {\em International Journal of Molecular Sciences}, 20(18):4353.
+
+\bibitem[Duan et~al., 2021]{Duan2021}
+Duan, X., Qiao, S., Li, D., Li, S., Zheng, Z., Wang, Q., and Zhu, X. (2021).
+\newblock Circulating {{miRNAs}} in {{Serum}} as {{Biomarkers}} for {{Early
+  Diagnosis}} of {{Non-small Cell Lung Cancer}}.
+\newblock {\em Frontiers in Genetics}, 12:987.
+
+\bibitem[Errington et~al., 2021]{cancer_replication}
+Errington, T.~M., Mathur, M., Soderberg, C.~K., Denis, A., Perfito, N., Iorns,
+  E., and Nosek, B.~A. (2021).
+\newblock Investigating the replicability of preclinical cancer biology.
+\newblock {\em eLife}, 10:e71601.
+
+\bibitem[Fehlmann et~al., 2020]{Fehlmann2020}
+Fehlmann, T., Kahraman, M., Ludwig, N., Backes, C., Galata, V., Keller, V.,
+  Geffers, L., Mercaldo, N., Hornung, D., Weis, T., Kayvanpour, E.,
+  {Abu-Halima}, M., Deuschle, C., Schulte, C., Suenkel, U., {von Thaler},
+  A.-K., Maetzler, W., Herr, C., F{\"a}hndrich, S., Vogelmeier, C., Guimaraes,
+  P., Hecksteden, A., Meyer, T., Metzger, F., Diener, C., Deutscher, S.,
+  {Abdul-Khaliq}, H., Stehle, I., Haeusler, S., Meiser, A., Groesdonk, H.~V.,
+  Volk, T., Lenhof, H.-P., Katus, H., Balling, R., Meder, B., Kruger, R.,
+  Huwer, H., Bals, R., Meese, E., and Keller, A. (2020).
+\newblock Evaluating the {{Use}} of {{Circulating MicroRNA Profiles}} for
+  {{Lung Cancer Detection}} in {{Symptomatic Patients}}.
+\newblock {\em JAMA oncology}, 6(5):714--723.
+
+\bibitem[Friedman, 2001]{gradientboosting}
+Friedman, J.~H. (2001).
+\newblock Greedy function approximation: {{A}} gradient boosting machine.
+\newblock {\em The Annals of Statistics}, 29(5):1189--1232.
+
+\bibitem[Geekiyanage et~al., 2012]{mirnabiomarker3}
+Geekiyanage, H., Jicha, G.~A., Nelson, P.~T., and Chan, C. (2012).
+\newblock Blood serum {{miRNA}}: {{Non-invasive}} biomarkers for
+  {{Alzheimer}}'s disease.
+\newblock {\em Experimental Neurology}, 235(2):491--496.
+
+\bibitem[{Griffiths-Jones} et~al., 2006]{mirbase}
+{Griffiths-Jones}, S., Grocock, R.~J., {van Dongen}, S., Bateman, A., and
+  Enright, A.~J. (2006).
+\newblock {{miRBase}}: {{microRNA}} sequences, targets and gene nomenclature.
+\newblock {\em Nucleic Acids Research}, 34(Database issue):D140--D144.
+
+\bibitem[Halvorsen et~al., 2016]{Halvorsen2016}
+Halvorsen, A.~R., Bjaan{\ae}s, M., LeBlanc, M., Holm, A.~M., Bolstad, N.,
+  Rubio, L., Pe{\~n}alver, J.~C., Cervera, J., Mojarrieta, J.~C.,
+  {L{\'o}pez-Guerrero}, J.~A., Brustugun, O.~T., and Helland, {\AA}. (2016).
+\newblock A unique set of 6 circulating {{microRNAs}} for early detection of
+  non-small cell lung cancer.
+\newblock {\em Oncotarget}, 7(24):37250--37259.
+
+\bibitem[Hastie et~al., 2009]{els}
+Hastie, T., Tibshirani, R., and Friedman, J. (2009).
+\newblock {\em The {{Elements}} of {{Statistical Learning}}: {{Data Mining}},
+  {{Inference}}, and {{Prediction}}, {{Second Edition}}}.
+\newblock {Springer Science \& Business Media}.
+
+\bibitem[Huang et~al., 2021]{meta-mirna-2}
+Huang, H., Zhu, J., Lin, Y., Zhang, Z., Liu, J., Wang, C., Wu, H., and Zou, T.
+  (2021).
+\newblock The potential diagnostic value of extracellular vesicle {{miRNA}} for
+  human non-small cell lung cancer: A systematic review and meta-analysis.
+\newblock {\em Expert Review of Molecular Diagnostics}, 21(8):823--836.
+
+\bibitem[Jiang et~al., 2018]{meta-mirna-3}
+Jiang, M., Li, X., Quan, X., Li, X., and Zhou, B. (2018).
+\newblock Clinically {{Correlated MicroRNAs}} in the {{Diagnosis}} of
+  {{Non-Small Cell Lung Cancer}}: {{A Systematic Review}} and
+  {{Meta-Analysis}}.
+\newblock {\em BioMed Research International}, 2018:e5930951.
+
+\bibitem[Jin et~al., 2017]{Jin2017}
+Jin, X., Chen, Y., Chen, H., Fei, S., Chen, D., Cai, X., Liu, L., Lin, B., Su,
+  H., Zhao, L., Su, M., Pan, H., Shen, L., Xie, D., and Xie, C. (2017).
+\newblock Evaluation of {{Tumor-Derived Exosomal miRNA}} as {{Potential
+  Diagnostic Biomarkers}} for {{Early-Stage Non}}\textendash{{Small Cell Lung
+  Cancer Using Next-Generation Sequencing}}.
+\newblock {\em Clinical Cancer Research}, 23(17):5311--5319.
+
+\bibitem[Keller et~al., 2020]{Keller2020}
+Keller, A., Fehlmann, T., Backes, C., Kern, F., Gislefoss, R., Langseth, H.,
+  Rounge, T.~B., Ludwig, N., and Meese, E. (2020).
+\newblock Competitive learning suggests circulating {{miRNA}} profiles for
+  cancers decades prior to diagnosis.
+\newblock {\em RNA Biology}, 17(10):1416--1426.
+
+\bibitem[Keller et~al., 2009]{Keller2009}
+Keller, A., Leidinger, P., Borries, A., Wendschlag, A., Wucherpfennig, F.,
+  Scheffler, M., Huwer, H., Lenhof, H.-P., and Meese, E. (2009).
+\newblock {{miRNAs}} in lung cancer - {{Studying}} complex fingerprints in
+  patient's blood cells by microarray experiments.
+\newblock {\em BMC Cancer}, 9(1):353.
+
+\bibitem[Keller et~al., 2014]{Keller2014}
+Keller, A., Leidinger, P., Vogel, B., Backes, C., ElSharawy, A., Galata, V.,
+  Mueller, S.~C., Marquart, S., Schrauder, M.~G., Strick, R., Bauer, A.,
+  Wischhusen, J., Beier, M., Kohlhaas, J., Katus, H.~A., Hoheisel, J., Franke,
+  A., Meder, B., and Meese, E. (2014).
+\newblock {{miRNAs}} can be generally associated with human pathologies as
+  exemplified for {{miR-144}}*.
+\newblock {\em BMC Medicine}, 12(1):224.
+
+\bibitem[Kosaka et~al., 2010]{mirnabiomarker2}
+Kosaka, N., Iguchi, H., and Ochiya, T. (2010).
+\newblock Circulating {{microRNA}} in body fluid: A new potential biomarker for
+  cancer diagnosis and prognosis.
+\newblock {\em Cancer Science}, 101(10):2087--2092.
+
+\bibitem[Kryczka et~al., 2021]{Kryczka2021}
+Kryczka, J., {Migdalska-S{\k{e}}k}, M., Kordiak, J., Kisza{\l}kiewicz, J.~M.,
+  {Pastuszak-Lewandoska}, D., Antczak, A., and {Brzezia{\'n}ska-Lasota}, E.
+  (2021).
+\newblock Serum {{Extracellular Vesicle-Derived miRNAs}} in {{Patients}} with
+  {{Non-Small Cell Lung Cancer}}\textemdash{{Search}} for {{Non-Invasive
+  Diagnostic Biomarkers}}.
+\newblock {\em Diagnostics}, 11(3):425.
+
+\bibitem[Leidinger et~al., 2014]{Leidinger2014}
+Leidinger, P., Backes, C., Dahmke, I.~N., Galata, V., Huwer, H., Stehle, I.,
+  Bals, R., Keller, A., and Meese, E. (2014).
+\newblock What makes a blood cell based {{miRNA}} expression pattern disease
+  specific? - {{A miRNome}} analysis of blood cell subsets in lung cancer
+  patients and healthy controls.
+\newblock {\em Oncotarget}, 5(19):9484--9497.
+
+\bibitem[Leidinger et~al., 2016]{Leidinger2016}
+Leidinger, P., Brefort, T., Backes, C., Krapp, M., Galata, V., Beier, M.,
+  Kohlhaas, J., Huwer, H., Meese, E., and Keller, A. (2016).
+\newblock High-throughput {{qRT-PCR}} validation of blood {{microRNAs}} in
+  non-small cell lung cancer.
+\newblock {\em Oncotarget}, 7(4):4611--4623.
+
+\bibitem[Leidinger et~al., 2011]{Leidinger2011}
+Leidinger, P., Keller, A., Borries, A., Huwer, H., Rohling, M., Huebers, J.,
+  Lenhof, H.-P., and Meese, E. (2011).
+\newblock Specific peripheral {{miRNA}} profiles for distinguishing lung cancer
+  from {{COPD}}.
+\newblock {\em Lung Cancer}, 74(1):41--47.
+
+\bibitem[Li et~al., 2017]{Li2017}
+Li, L.-L., Qu, L.-L., Fu, H.-J., Zheng, X.-F., Tang, C.-H., Li, X.-Y., Chen,
+  J., Wang, W.-X., Yang, S.-X., Wang, L., Zhao, G.-H., Lv, P.-P., Zhang, M.,
+  Lei, Y.-Y., Qin, H.-F., Wang, H., Gao, H.-J., and Liu, X.-Q. (2017).
+\newblock Circulating {{microRNAs}} as novel biomarkers of {{ALK-positive}}
+  non-small cell lung cancer and predictors of response to crizotinib therapy.
+\newblock {\em Oncotarget}, 8(28):45399--45414.
+
+\bibitem[{Lynam-Lennon} et~al., 2009]{mirnarole2}
+{Lynam-Lennon}, N., Maher, S.~G., and Reynolds, J.~V. (2009).
+\newblock The roles of {{microRNA}} in cancer and apoptosis.
+\newblock {\em Biological Reviews of the Cambridge Philosophical Society},
+  84(1):55--71.
+
+\bibitem[Marzi et~al., 2016]{Marzi2016}
+Marzi, M.~J., Montani, F., Carletti, R.~M., Dezi, F., Dama, E., Bonizzi, G.,
+  Sandri, M.~T., Rampinelli, C., Bellomi, M., Maisonneuve, P., Spaggiari, L.,
+  Veronesi, G., Bianchi, F., Di~Fiore, P.~P., and Nicassio, F. (2016).
+\newblock Optimization and {{Standardization}} of {{Circulating MicroRNA
+  Detection}} for {{Clinical Application}}: {{The miR-Test Case}}.
+\newblock {\em Clinical Chemistry}, 62(5):743--754.
+
+\bibitem[Mitchell et~al., 2017]{Mitchell2017}
+Mitchell, K.~A., Zingone, A., Toulabi, L., Boeckelman, J., and Ryan, B.~M.
+  (2017).
+\newblock Comparative {{Transcriptome Profiling Reveals Coding}} and
+  {{Noncoding RNA Differences}} in {{NSCLC}} from {{African Americans}} and
+  {{European Americans}}.
+\newblock {\em Clinical Cancer Research}, 23(23):7412--7425.
+
+\bibitem[Mobley et~al., 2013]{cancer_replication_survy}
+Mobley, A., Linder, S.~K., Braeuer, R., Ellis, L.~M., and Zwelling, L. (2013).
+\newblock A {{Survey}} on {{Data Reproducibility}} in {{Cancer Research
+  Provides Insights}} into {{Our Limited Ability}} to {{Translate Findings}}
+  from the {{Laboratory}} to the {{Clinic}}.
+\newblock {\em PLoS ONE}, 8(5):e63221.
+
+\bibitem[Nigita et~al., 2018]{Nigita2018}
+Nigita, G., Distefano, R., Veneziano, D., Romano, G., Rahman, M., Wang, K.,
+  Pass, H., Croce, C.~M., Acunzo, M., and {Nana-Sinkam}, P. (2018).
+\newblock Tissue and exosomal {{miRNA}} editing in {{Non-Small Cell Lung
+  Cancer}}.
+\newblock {\em Scientific Reports}, 8(1):10222.
+
+\bibitem[Patle and Chouhan, 2013]{kernel_svm}
+Patle, A. and Chouhan, D.~S. (2013).
+\newblock {{SVM}} kernel functions for classification.
+\newblock In {\em 2013 {{International Conference}} on {{Advances}} in
+  {{Technology}} and {{Engineering}} ({{ICATE}})}, pages 1--9.
+
+\bibitem[Patnaik et~al., 2017]{Patnaik2017}
+Patnaik, S.~K., Kannisto, E.~D., Mallick, R., Vachani, A., and Yendamuri, S.
+  (2017).
+\newblock Whole blood {{microRNA}} expression may not be useful for screening
+  non-small cell lung cancer.
+\newblock {\em PLOS ONE}, 12(7):e0181926.
+
+\bibitem[Patnaik et~al., 2012]{Patnaik2012}
+Patnaik, S.~K., Yendamuri, S., Kannisto, E., Kucharczuk, J.~C., Singhal, S.,
+  and Vachani, A. (2012).
+\newblock {{MicroRNA Expression Profiles}} of {{Whole Blood}} in {{Lung
+  Adenocarcinoma}}.
+\newblock {\em PLOS ONE}, 7(9):e46045.
+
+\bibitem[Petriella et~al., 2016]{differentserumtissue}
+Petriella, D., De~Summa, S., Lacalamita, R., Galetta, D., Catino, A.,
+  Logroscino, A.~F., Palumbo, O., Carella, M., Zito, F.~A., Simone, G., and
+  Tommasi, S. (2016).
+\newblock {{miRNA}} profiling in serum and tissue samples to assess noninvasive
+  biomarkers for {{NSCLC}} clinical outcome.
+\newblock {\em Tumor Biology}, 37(4):5503--5513.
+
+\bibitem[Pratt and Gibbons, 1981]{signed-rank-2}
+Pratt, J.~W. and Gibbons, J.~D. (1981).
+\newblock One-{{Sample}} and {{Paired-Sample Inferences Based}} on {{Signed
+  Ranks}}.
+\newblock In Pratt, J.~W. and Gibbons, J.~D., editors, {\em Concepts of
+  {{Nonparametric Theory}}}, Springer {{Series}} in {{Statistics}}, pages
+  145--202. {Springer}, {New York, NY}.
+
+\bibitem[Pritchard et~al., 2012]{mirnatech}
+Pritchard, C.~C., Cheng, H.~H., and Tewari, M. (2012).
+\newblock {{MicroRNA}} profiling: Approaches and considerations.
+\newblock {\em Nature Reviews Genetics}, 13(5):358--369.
+
+\bibitem[Qu et~al., 2017]{Qu2017}
+Qu, L., Li, L., Zheng, X., Fu, H., Tang, C., Qin, H., Li, X., Wang, H., Li, J.,
+  Wang, W., Yang, S., Wang, L., Zhao, G., Lv, P., Lei, Y., Zhang, M., Gao, H.,
+  Song, S., and Liu, X. (2017).
+\newblock Circulating plasma {{microRNAs}} as potential markers to identify
+  {{EGFR}} mutation status and to monitor epidermal growth factor
+  receptor-tyrosine kinase inhibitor treatment in patients with advanced
+  non-small cell lung cancer.
+\newblock {\em Oncotarget}, 8(28):45807--45824.
+
+\bibitem[Reis et~al., 2020]{Reis2020}
+Reis, P.~P., Drigo, S.~A., Carvalho, R.~F., Lopez~Lapa, R.~M., Felix, T.~F.,
+  Patel, D., Cheng, D., Pintilie, M., Liu, G., and Tsao, M.-S. (2020).
+\newblock Circulating {{miR-16-5p}}, {{miR-92a-3p}}, and {{miR-451a}} in
+  {{Plasma}} from {{Lung Cancer Patients}}: {{Potential Application}} in
+  {{Early Detection}} and a {{Regulatory Role}} in {{Tumorigenesis Pathways}}.
+\newblock {\em Cancers}, 12(8):2071.
+
+\bibitem[Shen et~al., 2013]{circmeta}
+Shen, Y., Wang, T., Yang, T., Hu, Q., Wan, C., Chen, L., and Wen, F. (2013).
+\newblock Diagnostic {{Value}} of {{Circulating microRNAs}} for {{Lung
+  Cancer}}: {{A Meta-Analysis}}.
+\newblock {\em Genetic Testing and Molecular Biomarkers}, 17(5):359--366.
+
+\bibitem[Shopland et~al., 1991]{roykingdod}
+Shopland, D.~R., Eyre, H.~J., and Peachacek, T.~F. (1991).
+\newblock Smoking-{{Attributable Cancer Mortality}} in 1991: {{Is Lung Cancer
+  Now}} the {{Leading Cause}} of {{Death Among Smokers}} in the {{United
+  States}}?
+\newblock {\em JNCI: Journal of the National Cancer Institute},
+  83(16):1142--1148.
+
+\bibitem[Sun et~al., 2020]{rbc_mirnas}
+Sun, L., Yu, Y., Niu, B., and Wang, D. (2020).
+\newblock Red {{Blood Cells}} as {{Potential Repositories}} of {{MicroRNAs}} in
+  the {{Circulatory System}}.
+\newblock {\em Frontiers in Genetics}, 11.
+
+\bibitem[Sung et~al., 2021]{globalkreftforekomst}
+Sung, H., Ferlay, J., Siegel, R.~L., Laversanne, M., Soerjomataram, I., Jemal,
+  A., and Bray, F. (2021).
+\newblock Global {{Cancer Statistics}} 2020: {{GLOBOCAN Estimates}} of
+  {{Incidence}} and {{Mortality Worldwide}} for 36 {{Cancers}} in 185
+  {{Countries}}.
+\newblock {\em CA: A Cancer Journal for Clinicians}, 71(3):209--249.
+
+\bibitem[Uddin and Chakraborty, 2018]{mirnarole}
+Uddin, A. and Chakraborty, S. (2018).
+\newblock Role of {{miRNAs}} in lung cancer.
+\newblock {\em Journal of Cellular Physiology}.
+
+\bibitem[{van den Berg} et~al., 2020]{mirnabiomarker4}
+{van den Berg}, M. M.~J., Krauskopf, J., Ramaekers, J.~G., Kleinjans, J. C.~S.,
+  Prickaerts, J., and Bried{\'e}, J.~J. (2020).
+\newblock Circulating {{microRNAs}} as potential biomarkers for psychiatric and
+  neurodegenerative disorders.
+\newblock {\em Progress in Neurobiology}, 185:101732.
+
+\bibitem[Walser et~al., 2008]{roykingrisiko}
+Walser, T., Cui, X., Yanagawa, J., Lee, J.~M., Heinrich, E., Lee, G., Sharma,
+  S., and Dubinett, S.~M. (2008).
+\newblock Smoking and {{Lung Cancer}}.
+\newblock {\em Proceedings of the American Thoracic Society}, 5(8):811--815.
+
+\bibitem[Walters et~al., 2019]{oncology_reproducability}
+Walters, C., Harter, Z.~J., Wayant, C., Vo, N., Warren, M., Chronister, J.,
+  Tritz, D., and Vassar, M. (2019).
+\newblock Do oncology researchers adhere to reproducible and transparent
+  principles? {{A}} cross-sectional survey of published oncology literature.
+\newblock {\em BMJ Open}, 9(12):e033962.
+
+\bibitem[Wilcoxon, 1945]{signed-rank-test}
+Wilcoxon, F. (1945).
+\newblock Individual {{Comparisons}} by {{Ranking Methods}}.
+\newblock {\em Biometrics Bulletin}, 1(6):80--83.
+
+\bibitem[Wozniak et~al., 2015]{Wozniak2015}
+Wozniak, M.~B., Scelo, G., Muller, D.~C., Mukeria, A., Zaridze, D., and
+  Brennan, P. (2015).
+\newblock Circulating {{MicroRNAs}} as {{Non-Invasive Biomarkers}} for {{Early
+  Detection}} of {{Non-Small-Cell Lung Cancer}}.
+\newblock {\em PLOS ONE}, 10(5):e0125026.
+
+\bibitem[Yao et~al., 2019]{Yao2019}
+Yao, B., Qu, S., Hu, R., Gao, W., Jin, S., Liu, M., and Zhao, Q. (2019).
+\newblock A panel of {{miRNAs}} derived from plasma extracellular vesicles as
+  novel diagnostic biomarkers of lung adenocarcinoma.
+\newblock {\em FEBS Open Bio}, 9(12):2149--2158.
+
+\bibitem[Yi et~al., 2021]{meta-mirna-4}
+Yi, M., Liao, Z., Deng, L., Xu, L., Tan, Y., Liu, K., Chen, Z., and Zhang, Y.
+  (2021).
+\newblock High diagnostic value of {{miRNAs}} for {{NSCLC}}: Quantitative
+  analysis for both single and combined {{miRNAs}} in lung cancer.
+\newblock {\em Annals of Medicine}.
+
+\bibitem[Yu et~al., 2019]{later_better}
+Yu, H., Guan, Z., Cuk, K., Zhang, Y., and Brenner, H. (2019).
+\newblock Circulating {{MicroRNA Biomarkers}} for {{Lung Cancer Detection}} in
+  {{East Asian Populations}}.
+\newblock {\em Cancers}, 11(3):415.
+
+\bibitem[Zaporozhchenko et~al., 2018]{Zaporozhchenko2018}
+Zaporozhchenko, I.~A., Morozkin, E.~S., Ponomaryova, A.~A., Rykova, E.~Y.,
+  Cherdyntseva, N.~V., Zheravin, A.~A., Pashkovskaya, O.~A., Pokushalov, E.~A.,
+  Vlassov, V.~V., and Laktionov, P.~P. (2018).
+\newblock Profiling of 179 {{miRNA Expression}} in {{Blood Plasma}} of {{Lung
+  Cancer Patients}} and {{Cancer-Free Individuals}}.
+\newblock {\em Scientific Reports}, 8(1):6348.
+
+\bibitem[Zhong et~al., 2021]{mirna_replicate_sequences}
+Zhong, S., Golpon, H., Zardo, P., and Borlak, J. (2021).
+\newblock {{miRNAs}} in lung cancer. {{A}} systematic review identifies
+  predictive and prognostic {{miRNA}} candidates for precision medicine in lung
+  cancer.
+\newblock {\em Translational Research}, 230:164--196.
+
+\end{thebibliography}

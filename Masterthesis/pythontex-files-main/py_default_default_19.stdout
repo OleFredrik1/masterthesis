@@ -1,0 +1,345 @@
+\begin{tabular}{|r|c|c|c|c|}
+\hline
+\bfseries Study & \bfseries LR & \bfseries SVM & \bfseries RF & \bfseries XGBoost
+\\ \hline \citet{Abdollahi2019}
+ & 
+\cellcolor{candypink}
+$0.670$
+ & 
+\cellcolor{mygray}
+$0.814$
+ & 
+\cellcolor{caribbeangreen}
+$0.933$
+ & 
+\cellcolor{mygray}
+$0.853$
+\\  \citet{Asakura2020}
+ & 
+\cellcolor{candypink}
+$0.734$
+ & 
+\cellcolor{mygray}
+$0.913$
+ & 
+\cellcolor{caribbeangreen}
+$0.968$
+ & 
+\cellcolor{mygray}
+$0.939$
+\\  \citet{Bianchi2011}
+ & 
+\cellcolor{candypink}
+$0.795$
+ & 
+\cellcolor{caribbeangreen}
+$0.852$
+ & 
+\cellcolor{mygray}
+$0.823$
+ & 
+\cellcolor{mygray}
+$0.843$
+\\  \citet{Boeri2011}
+ & 
+\cellcolor{mygray}
+$0.783$
+ & 
+\cellcolor{caribbeangreen}
+$0.950$
+ & 
+\cellcolor{caribbeangreen}
+$0.950$
+ & 
+\cellcolor{candypink}
+$0.575$
+\\  \citet{Chen2019}
+ & 
+\cellcolor{caribbeangreen}
+$0.882$
+ & 
+\cellcolor{mygray}
+$0.787$
+ & 
+\cellcolor{mygray}
+$0.793$
+ & 
+\cellcolor{candypink}
+$0.623$
+\\  \citet{Duan2021}
+ & 
+\cellcolor{caribbeangreen}
+$0.900$
+ & 
+\cellcolor{caribbeangreen}
+$0.900$
+ & 
+\cellcolor{caribbeangreen}
+$0.900$
+ & 
+\cellcolor{candypink}
+$0.800$
+\\  \citet{Fehlmann2020}
+ & 
+\cellcolor{mygray}
+$0.977$
+ & 
+\cellcolor{mygray}
+$0.980$
+ & 
+\cellcolor{candypink}
+$0.960$
+ & 
+\cellcolor{caribbeangreen}
+$0.980$
+\\  \citet{Halvorsen2016}
+ & 
+\cellcolor{mygray}
+$0.985$
+ & 
+\cellcolor{caribbeangreen}
+$0.993$
+ & 
+\cellcolor{mygray}
+$0.983$
+ & 
+\cellcolor{candypink}
+$0.933$
+\\  \citet{Jin2017}
+ & 
+\cellcolor{caribbeangreen}
+$1.000$
+ & 
+\cellcolor{caribbeangreen}
+$1.000$
+ & 
+\cellcolor{caribbeangreen}
+$1.000$
+ & 
+\cellcolor{candypink}
+$0.980$
+\\  \citet{Keller2009}
+ & 
+\cellcolor{caribbeangreen}
+$0.950$
+ & 
+\cellcolor{mygray}
+$0.900$
+ & 
+\cellcolor{mygray}
+$0.931$
+ & 
+\cellcolor{candypink}
+$0.800$
+\\  \citet{Keller2014}
+ & 
+\cellcolor{mygray}
+$0.847$
+ & 
+\cellcolor{caribbeangreen}
+$0.888$
+ & 
+\cellcolor{mygray}
+$0.864$
+ & 
+\cellcolor{candypink}
+$0.815$
+\\  \citet{Keller2020}
+ & 
+\cellcolor{mygray}
+$0.956$
+ & 
+\cellcolor{mygray}
+$0.944$
+ & 
+\cellcolor{candypink}
+$0.925$
+ & 
+\cellcolor{caribbeangreen}
+$0.967$
+\\  \citet{Kryczka2021}
+ & 
+\cellcolor{caribbeangreen}
+$0.749$
+ & 
+\cellcolor{mygray}
+$0.658$
+ & 
+\cellcolor{mygray}
+$0.646$
+ & 
+\cellcolor{candypink}
+$0.606$
+\\  \citet{Leidinger2011}
+ & 
+\cellcolor{candypink}
+$0.162$
+ & 
+\cellcolor{caribbeangreen}
+$0.752$
+ & 
+\cellcolor{mygray}
+$0.705$
+ & 
+\cellcolor{mygray}
+$0.411$
+\\  \citet{Leidinger2014}
+ & 
+\cellcolor{candypink}
+$0.160$
+ & 
+\cellcolor{mygray}
+$0.286$
+ & 
+\cellcolor{mygray}
+$0.365$
+ & 
+\cellcolor{caribbeangreen}
+$0.528$
+\\  \citet{Leidinger2016}
+ & 
+\cellcolor{mygray}
+$0.916$
+ & 
+\cellcolor{candypink}
+$0.903$
+ & 
+\cellcolor{caribbeangreen}
+$0.948$
+ & 
+\cellcolor{mygray}
+$0.936$
+\\  \citet{Li2017}
+ & 
+\cellcolor{mygray}
+$0.333$
+ & 
+\cellcolor{candypink}
+$0.167$
+ & 
+\cellcolor{caribbeangreen}
+$0.833$
+ & 
+\cellcolor{mygray}
+$0.500$
+\\  \citet{Marzi2016}
+ & 
+\cellcolor{caribbeangreen}
+$0.976$
+ & 
+\cellcolor{mygray}
+$0.969$
+ & 
+\cellcolor{candypink}
+$0.950$
+ & 
+\cellcolor{mygray}
+$0.968$
+\\  \citet{Nigita2018}
+ & 
+\cellcolor{caribbeangreen}
+$0.700$
+ & 
+\cellcolor{mygray}
+$0.300$
+ & 
+\cellcolor{candypink}
+$0.183$
+ & 
+\cellcolor{mygray}
+$0.233$
+\\  \citet{Patnaik2012}
+ & 
+\cellcolor{candypink}
+$0.698$
+ & 
+\cellcolor{caribbeangreen}
+$0.883$
+ & 
+\cellcolor{mygray}
+$0.777$
+ & 
+\cellcolor{mygray}
+$0.763$
+\\  \citet{Patnaik2017}
+ & 
+\cellcolor{caribbeangreen}
+$0.573$
+ & 
+\cellcolor{mygray}
+$0.481$
+ & 
+\cellcolor{candypink}
+$0.476$
+ & 
+\cellcolor{mygray}
+$0.543$
+\\  \citet{Qu2017}
+ & 
+\cellcolor{caribbeangreen}
+$1.000$
+ & 
+\cellcolor{caribbeangreen}
+$1.000$
+ & 
+\cellcolor{caribbeangreen}
+$1.000$
+ & 
+\cellcolor{candypink}
+$0.479$
+\\  \citet{Reis2020}
+ & 
+\cellcolor{caribbeangreen}
+$1.000$
+ & 
+\cellcolor{caribbeangreen}
+$1.000$
+ & 
+\cellcolor{mygray}
+$0.957$
+ & 
+\cellcolor{candypink}
+$0.943$
+\\  \citet{Wozniak2015}
+ & 
+\cellcolor{candypink}
+$0.494$
+ & 
+\cellcolor{mygray}
+$0.565$
+ & 
+\cellcolor{mygray}
+$0.663$
+ & 
+\cellcolor{caribbeangreen}
+$0.689$
+\\  \citet{Yao2019}
+ & 
+\cellcolor{mygray}
+$0.800$
+ & 
+\cellcolor{mygray}
+$0.600$
+ & 
+\cellcolor{caribbeangreen}
+$1.000$
+ & 
+\cellcolor{candypink}
+$0.400$
+\\  \citet{Zaporozhchenko2018}
+ & 
+\cellcolor{candypink}
+$0.242$
+ & 
+\cellcolor{mygray}
+$0.800$
+ & 
+\cellcolor{caribbeangreen}
+$0.842$
+ & 
+\cellcolor{mygray}
+$0.642$
+\\ \hline
+Mean & $0.742$ & $0.780$ & $0.822$ & $0.721$
+\\ \hline
+\end{tabular}

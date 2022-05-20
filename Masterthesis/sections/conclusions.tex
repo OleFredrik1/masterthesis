@@ -1,0 +1,101 @@
+\chapter{Evaluation and Conclusion}
+\label{cha:evaluationAndConclusion}
+
+This chapter contains the conclusions inferred from the results of this project. Parts of the conclusions are taken directly from \citet{forprosjekt} as there has been an overlap in questions that are discussed.
+
+\section{Evaluation}
+\label{sec:evaluation}
+
+Overall, this project has been a success as the research questions have been thoroughly examined. The results have been mixed with some positive results and many null results. The overall conclusion is that if there are any patterns in differential case-control expression of miRNA, these patterns have to be relatively small compared to other sources of variance in the dataset. As a result, the patterns are hard to find, and results that are found in one dataset would not replicate in other datasets in general.
+
+There are issues with data availability in research. It is important that data is available in order for third parties to be able to replicate the statistical findings in papers. Despite, out of 97 datasets requested by email I only received 2, which suggests that the data is not as available as it should be. This is especially worrisome as this field seems to have trouble with findings not replicating across different datasets, as found in this project. Furthermore, \citet{oncology_reproducability} have also found a lack of transparency and data availability in oncology, and list some problems with this.
+The first one is that the cost of data collection is typically high in cancer research, and in some cases, the data collection can be affecting cancer patients negatively, which means that one would like to not have to collect more data than necessary.
+Thus, having data available allows one to do cancer research more cost-effectively. One example could be that one could use data from a study and do an analysis of certain subsets of patients based on e.g. age, sex etc.
+Another point is that having data available leads to the possibility for researchers to replicate the statistical findings in the studies.
+There could be problems with p-hacking, spurious results etc. that would be hard for independent researchers to find without having the dataset available.
+
+This project also shows the value of trying to replicate findings, as the results show that there was a vast difference in the diagnostic accuracy you could get internally in a dataset and the accuracy you could get across datasets. 
+
+
+\section{Discussion}
+\label{sec:discussion}
+
+Despite vast resources invested into cancer research globally, the field suffers from a low replication rate. \citet{cancer_replication} looked at 50 experiments from 23 high-impact papers in cancer biology with a total of 158 effects. They found that positive effects could only be replicated in 43\% of the cases, while 49\% yielded null results and 7\% resulted in significant results in the opposite direction. The correlation between the original and the new effect sizes was $r=0.47$ using Spearman's r. For positive results, the median effect size was 85\% smaller in the replication than in the original research. According to one survey, around 50\% of cancer researchers have been unable to reproduce a published result \citep{cancer_replication_survy}. As a result, it is important to check what findings do replicate across studies and what findings do not. There have been many studies on circulating miRNA and lung cancer, but none has collected all available datasets for comparison. 
+
+There was an inconsistency between what was reported in the meta-analyses and what was found in the studies and the datasets in this project, regarding what miRNAs had a consistent expression across studies. This suggests that the consistency found in other meta-analyses might not be universal, and some skepticism is warranted. On one hand, these meta-analyses had more studies in their analyses than this project had, which should point to one having more trust in their results than in the results of this project. On the other hand, there might be a publication bias where one is more likely to publish, note or report results that are consistent with the existing literature. In addition, in e.g. \citet{mirna_replicate_sequences} only studies showing significant differential expression in a miRNA-sequence were noted, meaning that studies finding no differential expression were not taken into account. In this project, I tried to find whether there was a differential expression in the miRNAs in the datasets regardless of whether the authors had reported them as a result, which might paint a more representative picture.
+
+Indeed, trying to find significant patterns in differential case-control expression was futile as the distribution of pairwise log fold correlations using Pearson's r had a mean close to zero. If there were linear effects of case-control expression, one would expect that it would result in a higher correlation coefficient. As there were many datasets that were tested against each other, one can assume that there indeed was no large correlation in log fold change in general. The small correlations that were indeed found seem to be partially due to covariance between different miRNAs that was unrelated to case-control status.
+
+The datasets have different structures as a machine learning algorithm is able to distinguish between samples from different datasets quite well. This means that each study has some kind of footprint in the miRNA expressions that can be used for a machine learning algorithm to recognize a certain dataset. It would be hard to adjust for these effects that depend on which dataset is used, as effects that are linear on single miRNAs are already adjusted for. Effects thus have to be on a multi-miRNA level, but to find if such an effect is only in one dataset, one has to look at multiple datasets, and thus remove the independence between the datasets. As shown in \autoref{sec:pca_remove_artifacts_res}, removing the first two principal components is not sufficient to ensure consistency between datasets.
+
+It is still an open question what causes the lack of reproducibility in the datasets. This project tried to check for some obvious answers like technology, blood fraction or cancer stage. However, none seemed to explain the lack of reproducibility completely, as there was still a lack of reproducibility when adjusting for these differences or when only considering different subgroups. There is a limitation here, as it was not possible to group on a finer level due to having few datasets.
+
+\subsection{Is there consistent differential expression?}
+
+As there was little to no consistency in the differential expression of the miRNA between cases and controls, one might ask whether there exists a consistent differential expression at all?
+On one hand, there was limited consistency between the datasets in this study, and one might wonder to what degree the positive results in this project are statistical artifacts rather than valid results, as there seemed not to be a general pattern in the positive results.
+It might seem like most of the evidence in this field is based on single studies that look at one specific dataset. As shown in this project, one might not extrapolate the results from these kinds of studies and conclude that the results are valid in general.
+
+On the other hand, there often seemed to be a significant correlation between whether a machine learning model predicted that a certain sample was a cancer sample and whether it was an actual cancer sample (see \autoref{tab:asakura_predictions_correlation}). There also seems to be a clear pattern in the AUC PCA-plot in \autoref{fig:auc_pca}, however, there were no significant differences along the first principal component.
+In addition, one should note that this is a project with only \studylen {} datasets, while other meta-analyses like \citet{mirna_replicate_sequences} have a larger sample size of studies they are based on. However, these results have issues as explained above including that the degree of consistency in the differential expression of the miRNAs that was reported seems unlikely given the results in this project.
+
+% However, one disadvantage is that these meta analyses do not look at the data directly, and only use reported significantly expressed miRNAs, which could lead to being affected by publication bias or reporting bias, where results that are consistent with existing literature are more likely to be reported. Furthermore, the miRNAs that were reported to be consistently differentially expressed in the meta analyses were more ambiguously expressed in the datasets in this project, which might lead to some skepticism about whether the results of the meta analyses were valid.
+
+Anyhow, I think the results from this project make a good case to actually compare the data between studies, and not only the results, when doing meta-analyses in this field.
+
+\subsection{Limitation}
+
+There are limitations to this report. For once, there was heterogeneity in how miRNAs were measured, which is a source of noise in the data. It is plausible that a similar report as this that had available datasets that were homogenous in technology and body fluid would indeed have more consistent patterns and more significant results. There was also a limitation in that few of the requested datasets were received, which means that the analysis is less thorough than it would otherwise have been. 
+
+Another limitation is on the machine learning. This project looked at some possible machine learning models, but there are more available that might lead to better results, but that is out of the scope of this project and would be future work.
+
+\section{Contributions}
+\label{sec:contributions}
+
+The main contribution of this project has been to collect all the available datasets on circulating miRNAs and lung cancer. I converted all the datasets into a common format, thus making it easier for other researchers to use them if they want to compare different datasets or show that their findings replicate across studies.
+
+I have done a simplified meta-analysis where I looked at different meta-analyses and saw what miRNAs were reported to be consistently differentially expressed in the meta-analyses and saw whether these results replicated in the datasets that I collected.
+
+Furthermore, I tried to compare the different datasets in different ways to find what patterns in case-control characteristics can be replicated across datasets. I have also tried different methods to find the effect technology, blood fraction and cancer stage had on the comparability of the datasets.
+
+I have tried to group different datasets and use different machine learning algorithms to try to find subsets of datasets where there are patterns in case-control characteristics that a machine learning algorithm can find across studies.
+
+Finally, I made a visualization tool for the data so that other researchers can explore the data easily.
+
+\section{Future Work}
+\label{sec:future_work}
+The main goal should be to try to find the reason for the lack of reproducibility, as it might lead to methods that would adjust for these problems, thus making circulating miRNAs a valid diagnostic marker for lung cancer that is not very sensitive to study design.
+
+The process of data collection in this project can be built on by finding more datasets to add to the collection, or by using the already collected datasets to do analysis. Furthermore, the data visualization tool is available if someone wants a high-level exploration of the data without having to deal with the raw files.
+
+There are methods that might lead to higher reproducibility. One way would be to try to manipulate the raw data differently in hope that it would result in more consistent case-control patterns. However, I would argue that such data manipulation probably does not exist. That is because the log fold change correlation is close to zero, and most reasonable data manipulations would keep relative rank across the miRNAs, thus making it unlikely that another data manipulation would lead to higher correlations. Another way to try to get more consistency between datasets would be to collect datasets using the same technology and blood fraction, as there are several cases in this project where datasets had a higher consistency when using the same technology or the same blood fraction.
+
+Another idea would be to try different machine learning tools to find consistent patterns. There are still many possible models to choose from that might find patterns in the datasets that are replicable, and one might try to explore other possible models to see if they give any improvement in diagnostic accuracy.
+
+Finally, I would request people working in this area to make sure that one's findings replicate across different datasets. This would ensure that the findings are general and not spurious, which this project shows is rare. 
+
+\iffalse
+
+{\it Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat pulvinar hendrerit. Praesent sit amet elementum ipsum. Praesent id suscipit est. Maecenas gravida pretium magna non interdum. Donec augue felis, rhoncus quis laoreet sed, gravida nec nisi. Fusce iaculis fermentum elit in suscipit. }
+
+\section{Evaluation}
+\label{sec:Evaluation}
+
+When evaluating your results, avoid drawing grand conclusions, beyond that which your results can infact support. Further, although you may have designed your experiments to answer certain questions, the results may raise other questions in the eyes of the reader. It is important that you study the graphs/tables to look for unusual features/entries and discuss these aswell as discussing the main findings in the results. 
+
+\section{Discussion}
+\label{sec:Discussion}
+
+In the discussion it is important to include a discussion of not just the merits of the work conducted but also the limitations. 
+
+\section{Contributions}~\label{cont}
+\label{sec:Contributions}
+
+What are the main contributions made to the field and how significant are these contribution.  
+
+\section{Future Work}
+\label{sec:futureWork}
+
+Consider where you would like to extend this work. These extensions might either be continuing the ongoing direction or taking a side direction that became obvious during the work. Further, possible solutions to limitations in the work conducted, highlighted in ~\ref{sec:Discussion} may be presented. 
+
+\fi

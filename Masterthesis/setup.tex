@@ -1,0 +1,141 @@
+% (C) Anders Kofod-Petersen
+\documentclass[a4paper]{book}
+\usepackage[english]{babel}						% Correct English hyphenation
+%\usepackage[latin1]{inputenc}						% Allow for non-English letters
+\usepackage[table,dvipsnames]{xcolor}
+\usepackage{graphicx}							% To include graphics
+\usepackage{natbib}								% Correct citations
+\usepackage{fancyheadings}						% Nice header and footer
+\usepackage[linktocpage,colorlinks]{hyperref}			% PDF hyperlink
+\usepackage{geometry} 							% Better geometry
+%\usepackage[center]					% For cropping documents
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pgfplots}
+
+% B5 (uncomment to convert to B5 format)
+\geometry{b5paper}
+\setcounter{secnumdepth}{3}
+% Author
+% Fill in here, and use commands in the text. 
+\newcommand{\thesisAuthor}{Ole Fredrik Borgundvåg Berg}
+\newcommand{\thesisTitle}{Circulating miRNA and lung cancer: \\ - an analysis of available data}
+\newcommand{\thesisType}{Master thesis}
+\newcommand{\thesisDate}{Spring 2022}
+
+% PDF info
+\hypersetup{pdfauthor={\thesisAuthor}}
+\hypersetup{pdftitle={\thesisTitle}}
+\hypersetup{pdfsubject={\thesisType}}
+\hypersetup{linkcolor=black}
+\hypersetup{citecolor=black}
+\hypersetup{urlcolor=black}
+
+%Fancy headings
+%\pagestyle{fancy}
+%\pagestyle{fancyplain}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+%\lhead[\fancyplain{}{\thepage}]{\fancyplain{}{\let\uppercase\relax\leftmark}}
+%\rhead[\fancyplain{}{\let\uppercase\relax\rightmark}]{\fancyplain{}{\thepage}}
+%\chead[\fancyplain{}{}]{\fancyplain{}{}}
+%\lfoot[\fancyplain{}{}]{\fancyplain{}{}}
+%\cfoot[\fancyplain{}{}]{\fancyplain{}{}}
+%\rfoot[\fancyplain{}{}]{\fancyplain{}{}}
+
+% Citation format
+\bibliographystyle{apalike}
+\bibpunct{[}{]}{;}{a}{,}{,}
+
+
+
+\usepackage{rotating}
+\usepackage{csvsimple}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tablefootnote}
+\usepackage{todonotes}
+\usepackage{tikz}
+\usepackage{ifthen}
+\usepackage{arrayjob}
+\usepackage{pgfmath}
+\usepackage{pgfplotstable}
+\usepackage{pythontex}
+\usepackage{siunitx}
+\usepackage{tikz-network}
+\usepackage{adjustbox}
+\usepackage{svg}
+\usepackage{makecell}
+\usepackage{blindtext} %This package generates automatic text
+\usepackage{epigraph} 
+
+\usepgfplotslibrary{statistics}
+
+\extrafloats{300}
+
+\usepackage{alphalph}
+\renewcommand*{\thesubfigure}{%
+\alphalph{\value{subfigure}}%
+}%
+
+
+\usepackage{xparse}% http://ctan.org/pkg/xparse
+\usepackage{etoolbox}% http://ctan.org/pkg/etoolbox
+\newcounter{listtotal}\newcounter{listcntr}%
+\NewDocumentCommand{\studiesarr}{o}{%
+  \setcounter{listtotal}{0}\setcounter{listcntr}{-1}%
+  \renewcommand*{\do}[1]{\stepcounter{listtotal}}%
+  \expandafter\docsvlist\expandafter{\studies}%
+  \IfNoValueTF{#1}
+    {\studies}% \names
+    {% \names[<index>]
+     \renewcommand*{\do}[1]{\stepcounter{listcntr}\ifnum\value{listcntr}=#1\relax##1\fi}%
+     \expandafter\docsvlist\expandafter{\studies}}%
+}
+
+\newcommand{\Autoref}[1]{%
+  \begingroup%
+  \def\chapterautorefname{Chapter}%
+  \def\sectionautorefname{Section}%
+  \def\subsectionautorefname{Subsection}%
+  \autoref{#1}%
+  \endgroup%
+}
+
+\definecolor{caribbeangreen}{rgb}{0.8, 1, 0.8}
+\definecolor{candypink}{rgb}{1, 0.8, 0.8}
+\definecolor{mygray}{rgb}{0.99, 0.99, 0.99}
+\newcommand{\mynum}[1]{
+    \pgfmathparse{#1 < 0.01}
+    \ifthenelse{\pgfmathresult > 0}{
+        \num[round-mode=figures, exponent-mode=scientific]{#1}
+    }{
+        \num{#1}
+    }
+}
+\pgfset{
+  foreach/parallel foreach/.style args={#1in#2via#3}{evaluate=#3 as #1 using {{#2}[#3-1]}},
+}
+\newcommand\studies{Abdollahi2019, Asakura2020, Bianchi2011, Boeri2011, Chen2019, Duan2021,
+           Fehlmann2020, Halvorsen2016, Jin2017, Keller2009,
+           Keller2014, Keller2020, Kryczka2021, Leidinger2011, Leidinger2014,
+           Leidinger2016, Li2017, Marzi2016, Nigita2018,
+           Patnaik2012, Patnaik2017, Qu2017, Reis2020, Wozniak2015,
+           Yao2019, Zaporozhchenko2018}
+\newcommand\studylen{26}
+
+\begin{pycode}
+import os
+import sys
+import pandas as pd
+import numpy as np
+from scipy.stats import ttest_ind
+sys.path.append(os.getcwd())
+studies = ["Abdollahi2019", "Asakura2020", "Bianchi2011", "Boeri2011", "Chen2019", "Duan2021",
+           "Fehlmann2020", "Halvorsen2016", "Jin2017", "Keller2009",
+           "Keller2014", "Keller2020", "Kryczka2021", "Leidinger2011", "Leidinger2014",
+           "Leidinger2016", "Li2017", "Marzi2016", "Nigita2018",
+           "Patnaik2012", "Patnaik2017", "Qu2017", "Reis2020", "Wozniak2015",
+           "Yao2019", "Zaporozhchenko2018"]
+\end{pycode}
+

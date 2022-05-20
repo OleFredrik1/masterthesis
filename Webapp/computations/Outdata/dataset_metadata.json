@@ -1,0 +1,132 @@
+{
+  "Wozniak2015": {
+    "Body fluid": "Plasma",
+    "Technology": "qRT-PCR",
+    "Subtype": "Applied PCR array"
+  },
+  "Bianchi2011": {
+    "Body fluid": "Serum",
+    "Technology": "qRT-PCR",
+    "Subtype": "Applied PCR array"
+  },
+  "Zaporozhchenko2018": {
+    "Body fluid": "Plasma",
+    "Technology": "qRT-PCR",
+    "Subtype": "Exiqon PCR"
+  },
+  "Leidinger2016": {
+    "Body fluid": "Whole blood",
+    "Technology": "qRT-PCR",
+    "Subtype": "Fluidigm PCR array"
+  },
+  "Reis2020": {
+    "Body fluid": "Plasma",
+    "Technology": "Microarray",
+    "Subtype": "Nanostring"
+  },
+  "Asakura2020": {
+    "Body fluid": "Serum",
+    "Technology": "Microarray",
+    "Subtype": "Toray microarray"
+  },
+  "Duan2021": {
+    "Body fluid": "Serum",
+    "Technology": "Microarray",
+    "Subtype": "Exiqon microarray"
+  },
+  "Leidinger2014": {
+    "Body fluid": "Whole blood",
+    "Technology": "Microarray",
+    "Subtype": "SurePrint microarray"
+  },
+  "Keller2009": {
+    "Body fluid": "Blood cells",
+    "Technology": "Microarray",
+    "Subtype": "Geniom microarray"
+  },
+  "Patnaik2017": {
+    "Body fluid": "Whole blood",
+    "Technology": "Microarray",
+    "Subtype": "Exiqon microarray"
+  },
+  "Patnaik2012": {
+    "Body fluid": "Whole blood",
+    "Technology": "Microarray",
+    "Subtype": "Exiqon microarray"
+  },
+  "Fehlmann2020": {
+    "Body fluid": "Whole blood",
+    "Technology": "Microarray",
+    "Subtype": "Agilent microarray"
+  },
+  "Marzi2016": {
+    "Body fluid": "Serum",
+    "Technology": "qRT-PCR",
+    "Subtype": "TaqMan PCR"
+  },
+  "Jin2017": {
+    "Body fluid": "Plasma",
+    "Technology": "Sequencing",
+    "Subtype": "NEBNext seq"
+  },
+  "Halvorsen2016": {
+    "Body fluid": "Serum",
+    "Technology": "qRT-PCR",
+    "Subtype": "Applied PCR array"
+  },
+  "Boeri2011": {
+    "Body fluid": "Plasma",
+    "Technology": "Microarray",
+    "Subtype": "Ohio microarray"
+  },
+  "Leidinger2011": {
+    "Body fluid": "Whole blood",
+    "Technology": "Microarray",
+    "Subtype": "Geniom microarray"
+  },
+  "Chen2019": {
+    "Body fluid": "Plasma",
+    "Technology": "Sequencing",
+    "Subtype": "NEBNext seq"
+  },
+  "Qu2017": {
+    "Body fluid": "Plasma",
+    "Technology": "Microarray",
+    "Subtype": "Agilent microarray"
+  },
+  "Li2017": {
+    "Body fluid": "Plasma",
+    "Technology": "Microarray",
+    "Subtype": "Agilent microarray"
+  },
+  "Keller2014": {
+    "Body fluid": "P. Blood",
+    "Technology": "Microarray",
+    "Subtype": "Geniom microarray"
+  },
+  "Keller2020": {
+    "Body fluid": "Serum",
+    "Technology": "Microarray",
+    "Subtype": "SurePrint microarray"
+  },
+  "Yao2019": {
+    "Body fluid": "Plasma EV",
+    "Technology": "Sequencing",
+    "Subtype": "TruSeq seq"
+  },
+  "Nigita2018": {
+    "Body fluid": "Plasma Ex",
+    "Technology": "Sequencing",
+    "Subtype": "NEBNext seq"
+  },
+  "Kryczka2021": {
+    "Body fluid": "Serum EV",
+    "Technology": "qRT-PCR",
+    "Subtype": "TaqMan PCR"
+  },
+  "Abdollahi2019": {
+    "Body fluid": "Whole blood",
+    "Technology": "qRT-PCR",
+    "Subtype": "PCR"
+  }
+}

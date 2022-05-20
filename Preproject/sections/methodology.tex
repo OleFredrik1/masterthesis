@@ -1,0 +1,142 @@
+\chapter{Methodology}
+\label{cha:Methodology}
+
+The project will be divided in five main phases:
+\begin{itemize}
+    \item Literature search
+    \item Preprocessing of datasets
+    \item Statistical analysis of datasets
+    \item Combining the datasets
+    \item Machine learning on datasets
+\end{itemize}
+whereas the literature search was described in \autoref{sec:literature_review}, and the other parts will be described in this chapter.
+
+\section{Technical setup}
+In \autoref{tab:software}, the main software used in this project is listed.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|c|c|c|}
+       \hline
+       Software & Version & Usage \\
+       \hline 
+       Python\tablefootnote{\url{https://www.python.org}} & 3.9.7 & Programming language \\
+       \hline
+       NumPy\tablefootnote{\url{https://numpy.org}} & 1.20.3 & Numerical calculations with vectors and matrices \\
+       \hline
+       scikit-learn\tablefootnote{\url{https://scikit-learn.org/}} & 0.24.2 & Machine learning \\
+       \hline
+       XGBoost\tablefootnote{\url{https://xgboost.readthedocs.io/}} & 1.4.2 & XGBoost machine learning algorithm \\
+       \hline
+       SciPy\tablefootnote{\url{https://scipy.org}} & 1.7.1 & Scientific programming \\
+       \hline
+    \end{tabular}
+    \caption{Software used in this project}
+    \label{tab:software}
+\end{table}
+
+\section{Preprocessing of the datasets}
+Preprocessing is done to each of the datasets in order to make the datasets as comparable as possible.
+
+\subsection{Log-transforming the data}
+The log-transformation is explained closer in \autoref{subsec:var_stab}. The point of this is that we see that the variance in miRNA levels are approximately proportional to the square of the mean of the miRNA levels. Then log-transformation will make the variance independent from the mean.
+
+\subsection{Loess regression on the mean-variance relationship}
+In some cases, especially if the study uses microarrays, the mean-variance relationship is still not constant after log-transforming the data. In this case, loess regression (see: \autoref{subsec:loess_regression}) is used to adjust the variance of the samples to ensure that the variance is independent of the mean. An example is in \autoref{fig:loess}.
+
+\begin{figure}
+    \begin{subfigure}[b]{0.5\textwidth}
+    \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}
+    \begin{axis}[
+        xlabel={Mean miRNA concentration},
+        ylabel={Variance of miRNA concentration},
+    ]
+    \addplot[
+        scatter,only marks,scatter src=explicit symbolic,
+        table/col sep=comma,
+        scatter/classes={
+	    Sample points={blue},
+	    Loess regression={yellow}
+	}
+    ]
+    table[x=means,y=variances,meta=type]{tables/Loess/Before.csv};
+    \legend{Sample points, Loess regression}
+    \end{axis}
+    \end{tikzpicture}
+    }
+    \caption{Mean and variance before loess adjustment}
+    \label{fig:loess_before}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.5\textwidth}
+    \resizebox{\textwidth}{!}{
+    \begin{tikzpicture}
+    \begin{axis}[
+        xlabel={Mean miRNA concentration},
+        ylabel={Variance of miRNA concentration},
+    ]
+    \addplot[
+        scatter,only marks,scatter src=x,
+        table/col sep=comma,
+	scatter/use mapped color={draw=blue, fill=blue}
+    ]
+    table[x=means,y=variances]{tables/Loess/After.csv};
+    \end{axis}
+    \end{tikzpicture}
+    }
+    \caption{Mean and variance after loess adjustment}
+    \label{fig:loess_before}
+    \end{subfigure}
+    \caption{Mean and variance before and after loess in \citet{Asakura2020}}
+    \label{fig:loess}
+\end{figure}
+
+
+
+\subsection{Adjusting for covariates}
+Some datasets report information about the patients, including their sex, age and/or pack years\footnote{pack years = packs of cigarettes smoked per day * number of years smoked}. These demographic variables affect the miRNA levels, and we want to make these variables have as little influence as possible on the miRNA levels. Therefore, a linear regression model is fitted with the demographic variables as covariates, and with the miRNA levels as dependent variables. The resulting model will then have an estimate of the effect of the different covariates. By subtracting the effect of these covariates, more of the variance in the miRNA levels will be due to case-control characteristics. Another advantage of doing this adjustment is that the demographics of the different studies will differ, and by removing the effect of demographic variables, the studies become more comparable.
+
+
+\subsection{Standardizing miRNA levels}
+In order to make the measured miRNA levels comparable when they are measured using different technologies, the measured miRNA levels for each miRNA-sequence are standardized. However, one has to take into account that the datasets differ in the relative number of cancer and control samples. To adjust for this, mean and empirical variance was calculated for the cancer and the control samples separately. Let $\hat{\mu}_{ca}$ and $\hat{\sigma}_{ca}^2$ be the mean and empirical variance of the cancer samples, and likewise $\hat{\mu}_{co}$ and $\hat{\sigma}_{co}^2$ for the controls. Then the overall mean $\hat{\mu}$ and overall variance $\hat{\sigma}^2$ are estimated as:
+
+\begin{align*}
+	\hat{\mu} & = \frac{\hat{\mu}_{ca} + \hat{\mu}_{co}}{2} \\
+	\hat{\sigma}^2 &= \frac{\hat{\sigma}_{ca}^2 + \hat{\sigma}_{co}^2}{2}
+\end{align*}
+
+which are estimates of what the mean and variance would be if the dataset were balanced with an equal number of cancer and control samples.
+
+\section{Statistical analysis of the datasets}
+To get an overview of the datasets, different statistical analysis are done on the datasets.
+
+\subsection{Explained variance}
+An interesting question is how much of the variance in the miRNA levels is due to case-control in the different datasets. It is plausible that datasets that have only measured miRNA-sequences assumed to have a correlation with lung cancer have a larger portion of the variance due to case-control. As explained variance is made for the case where there is only one dependent variable, one has to do some adjustments to get an overall estimate. One way is to take the average of the explained variance for each miRNA-sequence (i.e. a uniform weight). Another way will be to to weight by the variance of each miRNA-sequence, as miRNA-sequences showing more variance might do so due to case-control effects (i.e. variance weighted). I will calculate both statistics. The explained variance will be calculated after the log-transformation, to be sure that the distribution of the levels for each miRNA-sequence is approximately normally distributed, as this is one of the prerequisites for the explained variance-analysis to be valid.
+
+Explained variance will be calculated using \verb|LinearRegression| and \\ \verb|explained_variance_score| in scikit-learn.
+
+\subsection{PCA}
+I want to run PCA, with two principal components, on the different datasets, as it makes it possible to visualize the dataset in a plot. This serves multiple purposes; first of all it makes it possible to find outliers in the datasets, as they would be far from the other samples in the plot. Secondly, by coloring the samples by whether they are cases or controls, one can visualize how separable the data are between cases and controls. This last point assumes that case-control effects on the data are along one (or both) of the first two principal components, as if they are not, the plot would not be separable, even though the full dataset might be. As the first components represent the main sources of variance in the data, seeing whether the data is separable in case-control in the plot is an alternative to explained variance, for seeing whether case-control effects are the main causes of variance in the dataset.
+
+PCA will be computed by the \verb|PCA| function in scikit-learn.
+
+\subsection{Fold change correlation}
+Another interesting question is whether the fold changes between cases and controls are the same in the different datasets. To do that, I will calculate the fold changes between the case and control in the different datasets, for different miRNA-sequences. There should be some correlation between fold changes in the different datasets, otherwise, it would seem that the biomarkers for lung cancer in the different datasets cannot be replicated, and thus one might question the results of the studies. 
+
+Correlation will be computed using \verb|pearsonr| in SciPy.
+
+\section{Combining datasets}
+Combining the datasets are done by processing the datasets so that they have equal characteristics. The miRNA-sequence representation in the datasets were translated into a common format. The common format is a CSV-file where the columns are the miRNA-sequences together with a last columns that says if the person has lung cancer or not. The rows are the different persons in the dataset. This goes against the convention in miRNA research, where it is more common with miRNA in rows and persons in columns. However, I use the convention used in machine learning, and it is simpler as most machine learning libraries assumes that the data are in this format.
+
+Then a function was made for extracting a subset of the datasets by using the intersection of miRNA-sequences of the extracted datasets, where one takes the intersection of miRNA-sequences in the studies that are collected. In addition, one can choose whether one would have each miRNA-sequence standardized separately or not. 
+
+
+\section{Machine learning on the datasets}
+Machine learning on the datasets will be done by using logistic regression, where one takes two datasets and train a logistic regression model on one of the datasets and then tries to predict on the other dataset. The AUC will be used as a metric of the diagnostic value of the model. This would be done for each pair of datasets that has at least 10 different miRNA-sequences in common.
+
+These models will be trained using \verb|LogisticRegression| in scikit-learn, and the AUC will be computed using \verb|roc_auc_score| in scikit-learn.
+
+
+\iffalse
+Here you will present the architecture or model that you have chosen and that is (or will be) implemented in your work. Note that putting algorithms in your report is not desirable but in certain cases these might be placed in the appendix. Code further be avoided in the report itself but may be delivered in the fashion requested by the supervisor or, in the case of masters delivery, submitted as additional documents. 
+\fi

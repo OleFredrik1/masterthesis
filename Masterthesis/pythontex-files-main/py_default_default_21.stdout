@@ -1,0 +1,70 @@
+\begin{tabular}{|r|c|c|}
+\hline
+\bfseries Study & \bfseries Mean early & \bfseries Mean late
+\\ \hline \citet{Abdollahi2019}
+ & 
+\cellcolor{candypink}
+$0.586$
+ & 
+\cellcolor{caribbeangreen}
+$0.726$
+\\  \citet{Bianchi2011}
+ & 
+\cellcolor{caribbeangreen}
+$0.735$
+ & 
+\cellcolor{candypink}
+$0.634$
+\\  \citet{Zaporozhchenko2018}
+ & 
+\cellcolor{caribbeangreen}
+$0.500$
+ & 
+\cellcolor{candypink}
+$0.250$
+\\  \citet{Duan2021}
+ & 
+\cellcolor{mygray}
+$1.000$
+ & 
+\cellcolor{mygray}
+*
+\\  \citet{Boeri2011}
+ & 
+\cellcolor{candypink}
+$0.850$
+ & 
+\cellcolor{caribbeangreen}
+$1.000$
+\\  \citet{Leidinger2011}
+ & 
+\cellcolor{candypink}
+$0.083$
+ & 
+\cellcolor{caribbeangreen}
+$0.525$
+\\  \citet{Qu2017}
+ & 
+\cellcolor{mygray}
+*
+ & 
+\cellcolor{mygray}
+$1.000$
+\\  \citet{Li2017}
+ & 
+\cellcolor{mygray}
+*
+ & 
+\cellcolor{mygray}
+$0.333$
+\\  \citet{Nigita2018}
+ & 
+\cellcolor{candypink}
+$0.350$
+ & 
+\cellcolor{caribbeangreen}
+$0.600$
+\\ \hline
+Mean & $0.586$ & $0.634$
+\\ \hline
+\end{tabular}

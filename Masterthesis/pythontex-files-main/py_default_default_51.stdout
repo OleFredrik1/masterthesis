@@ -1,0 +1,305 @@
+\begin{figure}
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/Before/Asakura2020_vs_Fehlmann2020.csv};
+                    \legend{\citet{Asakura2020}, \citet{Fehlmann2020}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Asakura2020} and \citet{Fehlmann2020} using two the principal components of the joint dataset, without any principal components removed}
+        \label{fig:pca_Asakura2020_vs_Fehlmann2020_before}
+\end{subfigure}%
+\hspace{0.08\textwidth}%
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/After/Asakura2020_vs_Fehlmann2020.csv};
+                    \legend{\citet{Asakura2020}, \citet{Fehlmann2020}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Asakura2020} and \citet{Fehlmann2020} using two the principal components of the joint dataset, after the two first principal components of each dataset are removed}
+        \label{fig:pca_Asakura2020_vs_Fehlmann2020_after}
+\end{subfigure}\end{figure}
+\begin{figure}
+\ContinuedFloat
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/Before/Asakura2020_vs_Keller2014.csv};
+                    \legend{\citet{Asakura2020}, \citet{Keller2014}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Asakura2020} and \citet{Keller2014} using two the principal components of the joint dataset, without any principal components removed}
+        \label{fig:pca_Asakura2020_vs_Keller2014_before}
+\end{subfigure}%
+\hspace{0.08\textwidth}%
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/After/Asakura2020_vs_Keller2014.csv};
+                    \legend{\citet{Asakura2020}, \citet{Keller2014}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Asakura2020} and \citet{Keller2014} using two the principal components of the joint dataset, after the two first principal components of each dataset are removed}
+        \label{fig:pca_Asakura2020_vs_Keller2014_after}
+\end{subfigure}\end{figure}
+\begin{figure}
+\ContinuedFloat
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/Before/Asakura2020_vs_Patnaik2017.csv};
+                    \legend{\citet{Asakura2020}, \citet{Patnaik2017}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Asakura2020} and \citet{Patnaik2017} using two the principal components of the joint dataset, without any principal components removed}
+        \label{fig:pca_Asakura2020_vs_Patnaik2017_before}
+\end{subfigure}%
+\hspace{0.08\textwidth}%
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/After/Asakura2020_vs_Patnaik2017.csv};
+                    \legend{\citet{Asakura2020}, \citet{Patnaik2017}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Asakura2020} and \citet{Patnaik2017} using two the principal components of the joint dataset, after the two first principal components of each dataset are removed}
+        \label{fig:pca_Asakura2020_vs_Patnaik2017_after}
+\end{subfigure}\end{figure}
+\begin{figure}
+\ContinuedFloat
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/Before/Fehlmann2020_vs_Keller2014.csv};
+                    \legend{\citet{Fehlmann2020}, \citet{Keller2014}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Fehlmann2020} and \citet{Keller2014} using two the principal components of the joint dataset, without any principal components removed}
+        \label{fig:pca_Fehlmann2020_vs_Keller2014_before}
+\end{subfigure}%
+\hspace{0.08\textwidth}%
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/After/Fehlmann2020_vs_Keller2014.csv};
+                    \legend{\citet{Fehlmann2020}, \citet{Keller2014}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Fehlmann2020} and \citet{Keller2014} using two the principal components of the joint dataset, after the two first principal components of each dataset are removed}
+        \label{fig:pca_Fehlmann2020_vs_Keller2014_after}
+\end{subfigure}\end{figure}
+\begin{figure}
+\ContinuedFloat
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/Before/Fehlmann2020_vs_Patnaik2017.csv};
+                    \legend{\citet{Fehlmann2020}, \citet{Patnaik2017}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Fehlmann2020} and \citet{Patnaik2017} using two the principal components of the joint dataset, without any principal components removed}
+        \label{fig:pca_Fehlmann2020_vs_Patnaik2017_before}
+\end{subfigure}%
+\hspace{0.08\textwidth}%
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/After/Fehlmann2020_vs_Patnaik2017.csv};
+                    \legend{\citet{Fehlmann2020}, \citet{Patnaik2017}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Fehlmann2020} and \citet{Patnaik2017} using two the principal components of the joint dataset, after the two first principal components of each dataset are removed}
+        \label{fig:pca_Fehlmann2020_vs_Patnaik2017_after}
+\end{subfigure}\end{figure}
+\begin{figure}
+\ContinuedFloat
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/Before/Patnaik2017_vs_Keller2014.csv};
+                    \legend{\citet{Patnaik2017}, \citet{Keller2014}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Patnaik2017} and \citet{Keller2014} using two the principal components of the joint dataset, without any principal components removed}
+        \label{fig:pca_Patnaik2017_vs_Keller2014_before}
+\end{subfigure}%
+\hspace{0.08\textwidth}%
+\begin{subfigure}[t]{0.46\textwidth}
+        \resizebox{\textwidth}{!}{
+            \begin{tikzpicture}
+                \begin{axis}[
+                        xlabel={Principal Component 1},
+                        ylabel={Principal Component 2},
+                    ]
+                    \addplot[
+                        scatter,only marks,scatter src=explicit symbolic,
+                        scatter/classes={
+                                A={green},
+                                B={red}
+                            },
+                        table/col sep=comma,
+                        mark size=1pt
+                    ]
+table[x=PCA1,y=PCA2,meta=Type]{tables/PCA/RemoveTwo/After/Patnaik2017_vs_Keller2014.csv};
+                    \legend{\citet{Patnaik2017}, \citet{Keller2014}}
+  \end{axis}
+            \end{tikzpicture}
+            }
+\caption{PCA of \citet{Patnaik2017} and \citet{Keller2014} using two the principal components of the joint dataset, after the two first principal components of each dataset are removed}
+        \label{fig:pca_Patnaik2017_vs_Keller2014_after}
+\end{subfigure}\end{figure}

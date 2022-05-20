@@ -1,0 +1,14 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[utf8]{inputenc}
+
+
+\begin{document}
+
+\usetikzlibrary {graphs,graphdrawing} \usegdlibrary {force}
+\tikz \graph [random seed=11, spring layout] {
+a -- b;
+c -- d;
+a -- c;
+};
+\end{document}

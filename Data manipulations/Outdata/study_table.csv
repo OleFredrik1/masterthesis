@@ -1,0 +1,27 @@
+Study,Technology,Body fluid,miRNAs,Cases,Controls,Total
+Abdollahi2019,qRT-PCR,Whole blood,4,43,43,86
+Asakura2020,Microarray,Serum,2565,1566,2178,3744
+Bianchi2011,qRT-PCR,Serum,29,95,69,164
+Boeri2011,Microarray,Plasma,131,19,6,25
+Chen2019,Sequencing,Plasma,253,30,24,54
+Duan2021,Microarray,Serum,1998,6,6,12
+Fehlmann2020,Microarray,Whole blood,689,606,2440,3046
+Halvorsen2016,qRT-PCR,Serum,254,38,16,54
+Jin2017,Sequencing,Plasma,527,26,12,38
+Keller2009,Microarray,Blood cells,386,17,19,36
+Keller2014,Microarray,P. Blood,722,73,94,167
+Keller2020,Microarray,Serum,435,10,90,100
+Kryczka2021,qRT-PCR,Serum EV,4,31,21,52
+Leidinger2011,Microarray,Whole blood,852,28,19,47
+Leidinger2014,Microarray,Whole blood,1186,42,38,80
+Leidinger2016,qRT-PCR,Whole blood,205,74,46,120
+Li2017,Microarray,Plasma,165,6,3,9
+Marzi2016,qRT-PCR,Serum,13,48,984,1032
+Nigita2018,Sequencing,Plasma Ex,102,19,7,26
+Patnaik2012,Microarray,Whole blood,1396,33,12,45
+Patnaik2017,Microarray,Whole blood,3036,86,77,163
+Qu2017,Microarray,Plasma,184,9,4,13
+Reis2020,Microarray,Plasma,795,35,7,42
+Wozniak2015,qRT-PCR,Plasma,342,100,100,200
+Yao2019,Sequencing,Plasma EV,569,5,5,10
+Zaporozhchenko2018,qRT-PCR,Plasma,175,17,10,27

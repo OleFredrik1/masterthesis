@@ -1,0 +1,61 @@
+=>PYTHONTEX#py#default#default#0#code#####100#
+import os
+import sys
+sys.path.append(os.getcwd())
+studies = ["Asakura2020", "Bianchi2011", "Boeri2011", "Chen2019", "Duan2021",
+           "Fehlmann2020", "Halvorsen2016", "Jin2017", "Keller2009",
+           "Keller2014", "Keller2020", "Kryczka2021", "Leidinger2011", "Leidinger2014",
+           "Leidinger2016", "Li2017", "Marzi2016", "Nigita2018",
+           "Patnaik2012", "Patnaik2017", "Qu2017", "Reis2020", "Wozniak2015",
+           "Yao2019", "Zaporozhchenko2018"]
+=>PYTHONTEX#py#default#default#1#i####results.tex#7#
+", ".join(f"\\citep{{{study}}}" + ("\\footnote{\\citet{Chen2019} is not the study where the dataset originated from, but it is a study using the dataset. The dataset is GSE71661 in the Gene Expression Omnibus, and has no citation listed: \\url{https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE71661}}" if study == "Chen2019" else "") for study in studies)
+=>PYTHONTEX#py#default#default#2#code####appendix.tex#47#
+import pandas as pd
+df = pd.read_csv("tables/FoldChangeCorrelation.csv", index_col=0)
+print("\\resizebox{\\textwidth}{!}{")
+print("\\begin{tabular}{r*{\\studylen}{c}} & ")
+print(" & ".join(f"\\rotatebox{{90}}{{\\citet{{{study}}}}}" for study in df.columns))
+print("\\\\\hline")
+for row in df:
+    print(f"\\citet{{{row}}} & ")
+    print(" & ".join(s[:4] if not "-" in s else s[:5] for s in df[row]))
+    print("\\\\")
+print("\\end{tabular}}")
+=>PYTHONTEX#py#default#default#3#code####appendix.tex#66#
+import pandas as pd
+df = pd.read_csv("tables/CrossAUC.csv", index_col=0)
+print("\\resizebox{\\textwidth}{!}{")
+print("\\begin{tabular}{r*{\\studylen}{c}} & ")
+print(" & ".join(f"\\rotatebox{{90}}{{\\citet{{{study}}}}}" for study in df.columns))
+print("\\\\\hline")
+for row in df:
+    print(f"\\citet{{{row}}} & ")
+    print(" & ".join(s[:4] if not "-" in s else s[:5] for s in df[row]))
+    print("\\\\")
+print("\\end{tabular}}")
+=>PYTHONTEX:SETTINGS#
+version=0.18
+outputdir=pythontex-files-main
+workingdir=.
+workingdirset=false
+gobble=none
+rerun=default
+hashdependencies=default
+makestderr=false
+stderrfilename=full
+keeptemps=none
+pyfuture=default
+pyconfuture=none
+pygments=true
+pygglobal=:GLOBAL||
+fvextfile=-1
+pyconbanner=none
+pyconfilename=stdin
+depythontex=false
+pygfamily=py|python3|
+pygfamily=pycon|pycon|
+pygfamily=sympy|python3|
+pygfamily=sympycon|pycon|
+pygfamily=pylab|python3|
+pygfamily=pylabcon|pycon|

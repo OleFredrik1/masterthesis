@@ -1,0 +1,83 @@
+\chapter{Evaluation and Conclusion}
+\label{cha:evaluationAndConclusion}
+
+This chapter contains the conclusions infered from the results in this project.
+
+\section{Evaluation}
+\label{sec:evaluation}
+
+The results of the project were disappointing for two major reasons:
+\begin{itemize}
+    \item I received virtually none of the requested datasets.
+    \item The correlation in log-fold-change was poor, which suggest that replicating fold changes are hard, and that conclusions made from one dataset generally cannot be generalized.
+    \item Using one dataset to try to predict on another dataset generally led to poor results.
+\end{itemize}
+
+On the other hand there are some important positive points to note:
+\begin{itemize}
+    \item Null findings are also important.
+    \item The work with transforming dataset is done so that other researchers can benefit.
+    \item There is still possibilities for improving data modelling as this project have just done naive machine learning.
+\end{itemize}
+
+When it comes to the research questions, the two major one remains unanswered due to not enough time to do the machine learning part, as especially the literature search and data collection and processing work were exhaustive. However, some useful information about the properties of the different datasets and the main questions will be considered more in the main thesis.
+
+In retrospect, it might seem that a reasonable research question would be whether one dataset has diagnostic value for another dataset at all, which I took mostly for granted as I formulated the research questions. Especially because there are fold changes that seem replicated across studies (see e.g. \citet{mirna_replicate_sequences}). There might of course be publication bias or similar issues at play, which means that one should be cautious in concluding with anything with certainty. \citet{mirna_replicate_sequences} also found conflicting results regarding whether a certain miRNA-sequence was up- or down-regulated in many cases. In addition, ontology has generally a low replication rate. \citet{cancer_replication} looked at 50 experiments from 23 high-inpact papersin cancer biology with a total of 158 effects. They found that positive effects could only be replicated in 43\% of the cases, while 49\% yielded null results and 7\% resulted in significant results in the opposite direction. In total, the correlation between the original and the new effect sizes were $r=0.47$.
+
+Everything considered, I think that the project has been mostly successful in achieving most of what was planned in this project, though there was not much time for machine learning, which is for future work.
+
+
+\section{Discussion}
+\label{sec:discussion}
+
+The fact that I received few of the requested datasets is problematic, as it makes replication of the findings in the different studies hard.
+\citet{oncology_reproducability} have also found a lack of transparency and data availability in oncology, and list some problems with this.
+The first one is that the cost of data collecting is typically high in cancer research, and in some cases can be affecting cancer patients negatively, which means that one would like to not have to collect more data than necessary.
+Thus having data available allows one to do cancer research more cost effectively. One example could be that one could use data from a study and do analysis of certain subsets of patients based on e.g. age, sex etc.
+Another point is that having data available leads to the possibility for researchers to replicate the statistical findings in the studies.
+There could be problems with p-hacking, spurious results etc. that would be hard for independent researchers to find without having the dataset available.
+
+
+
+\section{Contributions}
+\label{sec:contributions}
+
+This was the first project the try to collect all datasets on circulating microRNA and diagnosis of lung cancer. Trying to collect all the datasets gave an estimate of the data availability that are in this area of research. Now that all the datasets are collected and processed into a common format, it would be easier for future research to build upon this data, as all the work doing data collection and processing is already done.
+
+This project tried to look at different statistical properties of the different miRNA datasets that were available. This has led to an overview of the different available datasets, which is practical for reference.
+
+There are also some preliminary results concerning machine learning across datasets which can be built upon in future studies to have something to measure against for trying to find improvements.
+
+\section{Future Work}
+\label{sec:future_work}
+
+There are several possibilities for building onto this work. The first major way is to try to make the datasets more comparable. The datasets were made using different technologies and different patient groups. This project tried to compensate by standardizing the data and adjusting the data using linear estimates of demographic effects, where demographic data was reported for the patients. However, it is possible that other adjustments to the datasets will lead to better correlations between the datasets.
+
+Another possibility for future work is to combine different datasets and try to learn a model on this combined dataset, in hopes that this would lead to better ability for the model to generalize, so that the model would only use case-control effects that are reproduced between different datasets. It is possible that this would lead to better results. We already know that there are significant correlation in the log-fold-change, which means that it might be possible to get better results if preprocessing and machine learning in other ways, but it is highly uncertain as the correlations were similar when case-control status was randomly assigned.
+
+It is also possible to try different machine learning models, as some models might be better than others when it comes to generalizing across datasets. This will be the focus in the main thesis.
+\iffalse
+
+{\it Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat pulvinar hendrerit. Praesent sit amet elementum ipsum. Praesent id suscipit est. Maecenas gravida pretium magna non interdum. Donec augue felis, rhoncus quis laoreet sed, gravida nec nisi. Fusce iaculis fermentum elit in suscipit. }
+
+\section{Evaluation}
+\label{sec:Evaluation}
+
+When evaluating your results, avoid drawing grand conclusions, beyond that which your results can infact support. Further, although you may have designed your experiments to answer certain questions, the results may raise other questions in the eyes of the reader. It is important that you study the graphs/tables to look for unusual features/entries and discuss these aswell as discussing the main findings in the results. 
+
+\section{Discussion}
+\label{sec:Discussion}
+
+In the discussion it is important to include a discussion of not just the merits of the work conducted but also the limitations. 
+
+\section{Contributions}~\label{cont}
+\label{sec:Contributions}
+
+What are the main contributions made to the field and how significant are these contribution.  
+
+\section{Future Work}
+\label{sec:futureWork}
+
+Consider where you would like to extend this work. These extensions might either be continuing the ongoing direction or taking a side direction that became obvious during the work. Further, possible solutions to limitations in the work conducted, highlighted in ~\ref{sec:Discussion} may be presented. 
+
+\fi

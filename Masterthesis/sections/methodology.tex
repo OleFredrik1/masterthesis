@@ -1,0 +1,178 @@
+\chapter{Methodology}
+\label{cha:Methodology}
+
+For a description of the data processing, see \citet{forprosjekt}.
+
+This project consists of the following steps:
+\begin{enumerate}
+    \item Checking if there are properties of the datasets (like the type of technology used for measuring miRNA) that contribute to the log fold change correlation.
+    \item Finding whether there is evidence that there are patterns in miRNA expression that are consistently found to be related to case-control characteristics.
+    \item Finding whether there are structural differences between the datasets by seeing whether a machine learning algorithm can distinguish samples from different datasets.
+    \item Finding datasets that are similar to each other using hierarchical clustering algorithms.
+    \item Do machine learning internally in each dataset, as it would be close to an upper threshold on the accuracy that can be found across datasets.
+    \item Try to find one or more miRNA-sequences that are consistent biomarkers for lung cancer using meta-analyses and the datasets.
+    \item PCA analysis using several datasets at once.
+    \item Machine learning on multiple datasets that are joined in different ways.
+    \item Looking for noise in PCA components.
+    \item Checking for optimal RPM thresholds in sequencing data.
+    \item Checking for red blood cells in the data.
+    \item Creating a web application for visualizing the data.
+\end{enumerate}
+
+The methodology only includes experiments where additional details are needed. All experiments are described in the results.
+
+\section{Structured Literature Review Protocol}
+\label{sec:literature_review}
+
+The literature review was done in \citet{forprosjekt} and the same explanation can be found there, but is also added here for completeness.
+
+The point of the literature search was to find studies relevant to circulating miRNA and lung cancer. The main search engine used was PubMed\footnote{\url{https://pubmed.ncbi.nlm.nih.gov/}}, which is a commonly used search engine for medical literature. The search term used was:
+\begin{verbatim}
+(lung OR pulmonary OR NSCLC) and (tumor OR cancer OR carcinoma) and
+(microRNA* OR miRNA* OR miR*) and (diagnosis OR biomarker OR detection)
+and (serum or plasma or "whole blood")
+\end{verbatim}
+In addition, I searched databases that have public gene expression data, as described in \autoref{tab:genedatabase}.
+\begin{table}[htbp]
+\begin{center}
+\caption{Search in public gene expression databases. The first column is the name of the database. The second column is the search term that was used to search the database.}
+\label{tab:genedatabase}
+\begin{tabular}{|p{0.25\textwidth}|p{0.75\textwidth}|}\hline
+\bfseries Database name & \bfseries Search term\\\hline
+ArrayExpress\tablefootnote{\url{https://www.ebi.ac.uk/arrayexpress/}} & \verb|microrna lung cancer|\\\hline
+Gene Expression Omnibus (GEO)\tablefootnote{\url{https://www.ncbi.nlm.nih.gov/gds}} & \verb|(mirna OR microrna) AND "lung cancer"| \verb|AND (diagnosis OR detection) |\\\hline
+OmicsDI\tablefootnote{\url{https://www.omicsdi.org}} & \verb|"lung cancer" AND TAXONOMY: 9606 AND| \verb|-"breast cancer" AND (mirna OR microrna)| \verb|AND (serum OR plasma OR "whole blood")|\\\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+The inclusion criteria were based on what datasets I thought were relevant to this project:
+\begin{itemize}
+    \item The paper is an experiment where circulating miRNA is measured.
+\end{itemize}
+Some of the studies measured miRNA levels in the lung tissue or in the sputum, rather than measuring circulating miRNA. As the values are somewhat different between lung tissue miRNA and circulating miRNA \citep{differentserumtissue}, only the circulating miRNA ones were selected in order to have a consistent dataset. In addition, the research question was to look at the diagnostic value of circulating miRNA, which makes it reasonable to only use circulating miRNA data.
+
+\begin{itemize}
+    \item The study both has people diagnosed with lung cancer and controls not diagnosed with lung cancer.
+\end{itemize}
+
+The controls in some of the studies are not healthy, but suffer from other kinds of lung diseases. Other studies have both healthy controls and controls with other lung illnesses. Both are relevant, as on one hand, one would like to see the difference between healthy controls and patients with lung cancer in order to remove miRNA changes due to other illnesses. On the other hand, people who are getting checked for lung cancer often have lung issues, which is the reason for their checkup.
+
+Some studies were excluded as they did not have a control group like \citet{Mitchell2017}.
+
+\begin{itemize}
+    \item At least four different miRNA-sequences were measured.
+\end{itemize}
+
+The point of this project is to combine and compare datasets. Having few miRNA-sequences measured makes it hard to combine datasets, as there is a high likelihood that there are no overlapping miRNA-sequences between the datasets.
+
+\begin{itemize}
+    \item Meta-analyses were used as a source of relevant studies.
+\end{itemize}
+
+Some of the studies found were meta-analyses. In that case, relevant studies were retrieved from the references of the meta-analysis.
+
+\section{Technical setup}
+In \autoref{tab:software}, the main software used in this project is listed.
+
+\begin{table}
+    \caption{Software used in this project. The first column is the name of the software, the second column is the version of the software and the last column is the usage of the software}
+    \label{tab:software}
+    \centering
+    \begin{tabular}{|c|c|l|}
+       \hline
+       \bfseries Software & \bfseries Version & \bfseries Usage \\
+       \hline 
+       Python\tablefootnote{\url{https://www.python.org}} & 3.9.7 & Programming language \\
+       \hline
+       NumPy\tablefootnote{\url{https://numpy.org}} & 1.20.3 & Numerical calculations with vectors and matrices \\
+       \hline
+       scikit-learn\tablefootnote{\url{https://scikit-learn.org/}} & 0.24.2 & Machine learning \\
+       \hline
+       XGBoost\tablefootnote{\url{https://xgboost.readthedocs.io/}} & 1.4.2 & XGBoost machine learning algorithm \\
+       \hline
+       SciPy\tablefootnote{\url{https://scipy.org}} & 1.7.1 & Scientific programming \\
+       \hline
+    \end{tabular}
+\end{table}
+
+\section{Evidence for consistently differentially expressed miRNA-sequences}
+
+There are multiple ways to find out whether there are miRNAs that are consistently differentially expressed.
+
+\subsection{Paired sign test}
+\label{subsec:paired_sign_test_met}
+A paired sign test is in this case an experiment trying to estimate the probability that a miRNA-sequence is differentially expressed in the same direction (up- or down-regulated in cancer) in two different datasets. This will be done by finding all pairs of studies where both have a given miRNA, and then find the differential expression of the given miRNA in the two studies. This will be done for all miRNAs, resulting in one pair for each time two studies have measured the same miRNA. By looking at all these pairs, it is possible to calculate the wanted probability by looking at the proportion of such pairs that have differential expressions in the same direction. One question is whether one should only consider pairs where both miRNAs are significantly differentially expressed, i.e. a p-value less than 0.05 on a t-test of the log fold change, or not. One advantage of only considering significantly differentially expressed miRNAs is that when the difference is not significant, it is more likely that the sign of the difference is only due to chance. On the other hand, if a miRNA is significantly up-regulated in one study, but not significantly regulated in another study, this lowers the consistency of the differential expression. Due to the advantages and disadvantages of both options, I will report using (1) only pairs where both are significant, (2) pairs where at least one is significant and (3) all pairs, and corresponding p-values that the different probabilities are larger than $0.50$ using a binomial test.
+
+\subsection{Signed-rank test with cross validation}
+Another way to find whether there is any consistency in the differential expression of miRNA is to use Wilcoxon signed-rank test (see \autoref{subsec:wilcoxon-signed-rank}). This will be done by looking at the log fold change in a miRNA-sequence across different studies, and then use the signed-rank test to find whether the miRNA-sequence is significantly up- or down-regulated across studies, by looking at the signed-rank test of median differential expression of the miRNA-sequence, and whether this median is positive or negative.
+
+\subsubsection{Using t-test results as values for signed-rank test}
+\label{subsubsec:met_t_test_signed_rank}
+As seen in \citet{forprosjekt}, there is a large difference in the number of samples in the different datasets, which means that using raw log fold chance might lead to small datasets having a big impact on the signed-rank test due to chance. Therefore, I will also do an experiment where instead of using log fold change in the signed-rank test, I will use the p-value of a t-test instead. Then, datasets with more samples get a larger impact as they have more statistical power. More formally, I will do a two-sided t-test of the log fold change and use $\frac{\text{sgn}(\text{t-value})}{\text{p-value}}$ as the value for the signed-rank-test. Notice that the sign is the same as the log fold change, and that the absolute value of the fraction is inverse proportional to the p-value. As the signed-rank-test only considers the rank of the value, and not the absolute value, any function decreasing by increasing p-values would work, including this.
+
+
+
+\subsubsection{Cross validation}
+\label{subsubsec:met_signed_rank_cv}
+Firstly, to ensure external validity of the results of the signed-rank test, I will do a test where I do a signed-rank test on all studies, except two that are exempted. Then I will look at the 10 most and 10 least consistently differentially expressed miRNA-sequences based on the signed-rank test, using only miRNAs that are in at least ten of the studies, where these 20 miRNA-sequences are also in the two exempted studies. If two exempted studies do not have at least 20 miRNA-sequences in common that are in at least ten of the other datasets, that pair of studies will not be exempted together. Otherwise, all pairs of two datasets will be tried as exempted datasets. If there is a larger consistency in the two exempted datasets in the expression of the miRNA that had the most consistency in the signed-rank test, that would suggest that the signed-rank test has external validity. The consistency in the two exempted datasets will be calculated similarly to \autoref{subsec:paired_sign_test_met}, i.e. the proportion of miRNAs that have the same direction of differential expression is compared between the 10 most and 10 least consistently differentially expressed miRNA-sequences in the signed-rank test. 
+
+\subsubsection{Finding most consistently differentially expressed miRNAs}
+\label{subsubsec:met_singed_rank_no_cv}
+By using the signed-rank-test on all the datasets, one can find the miRNA-sequences that are the most consistently differentially expressed in the datasets. This will both be done using log fold change and using t-test results as the value in the signed-rank-test. Thereafter, I will find the 10 most consistently differentially expressed miRNAs using each of the two possible metrics for the change in miRNA expression. The p-values will be adjusted using a Bonferroni correction, to adjust for the multiple testing. 
+
+\section{Hierarchical clustering of datasets}
+\label{sec:hierarchical_clustering_met}
+The clustering will be computed using \verb|scipy.cluster.hierarchy.linkage| in SciPy with ``ward'' as method. The distance will be the mean of the squared difference in log fold change for each miRNA-sequence that the two datasets have in common. I.e. if $x_i$ and $y_i$ are the log fold changes in miRNA $i$ in the two datasets, and there are $n$ miRNA-sequences in common between these datasets. Then the distance is 
+$$\text{dist(x, y)} = \frac{1}{n} \sum_{i=1}^n \left(x_i - y_i\right)^2$$
+The results will be visualized in a dendrogram. 
+
+\section{Machine learning on single datasets}
+\label{sec:machine_learning_single}
+I will train four different models on each dataset using logistic regression, SVM, random forest and XGBoost. The models will be tested using AUC, and the AUC will be calculated using cross validation where the dataset is split into $c = \min(5, \text{\#Cases}, \text{\#Controls})$ equal parts and for each of the $c$ parts, there will be a round where the model is trained on the $c-1$ other parts of the dataset and tested on the last part. The resulting AUC will be the average over the $c$ rounds. %To remove spurious AUC values, only datasets with at least 50 samples will be used.
+
+\section{Machine learning using multiple datasets}
+
+There are multiple ways to do machine learning using multiple datasets.
+
+\subsection{Using the most replicated miRNA-sequences from the meta-analyses}
+\label{subsec:most_replicated}
+I will select the datasets that have all the miRNA-sequences that were most replicated in the meta-analyses, and train a logistic regression model using leave one out cross validation. One dataset is chosen as the test dataset in each iteration, whilst the model is trained on the other datasets. The samples will be weighted so that the sum of weights in each dataset is the same, and the weights of all samples in the same dataset are the same. 
+
+\subsection{Training on two datasets}
+\label{sec:met_two_datasets}
+I will train different machine learning models on two datasets and try to predict on a third dataset, and then compare the results to the results that are found by training the model on only one of the datasets. The results will only be considered if the three datasets have at least 10 miRNA-sequences in common, to ensure the datasets are similar enough. The samples will be weighted so that the sum of weights in each dataset is the same, and the weights of all samples in the same dataset are the same.
+
+
+
+\section{Finding RPM threshold for sequencing data}
+\label{sec:met_sequencing_thresholds}
+
+More precisely, I will make cutoffs on $0$, $1$, $10$, $100$ and $1000$ mean RPM (reads per million) in the sequencing datasets, where all miRNA-sequences that have a lower average read than the threshold are filtered out.
+
+I will train on the sequencing datasets using leave-one-out cross validation, i.e. using all datasets except one test set, and take the average AUC when the different datasets are used as test datasets. This will be done for all the different thresholds. I will use two different models. Firstly, I will train a logistic regression model, using the miRNAs that the datasets have in common. Afterward, I will train an XGBoost model using the union of the miRNAs in the different datasets, and setting missing values to NaN.
+
+
+\section{Creating a web app for visualizing data}
+
+One goal of this project was to make data easily available for other researchers to explore. Therefore, would make a web application where one can visualize the data easily. The web application was made using the front-end framework React\footnote{\url{https://reactjs.org/}} for the main application and Plotly.js for graphs\footnote{\url{https://plotly.com/javascript/}}.
+
+\subsection{Pairwise machine learning}
+\label{subsec:pairwise_machine_learning_met}
+
+
+The pairwise machine learning between two pairs of datasets is calculated as follows: First, the intersection of miRNA-sequences between the two datasets is computed. If the size of this intersection is smaller than four, then the pair is skipped. Otherwise, the following AUCs are calculated:
+
+\begin{itemize}
+    \item The mean AUC when using a $\min(5, \text{\#cases}, \text{\#controls})$-fold cross validation in the first dataset, only using the miRNAs that are in common for the two datasets.
+    \item The mean AUC when using a $\min(5, \text{\#cases}, \text{\#controls})$-fold cross validation in the second dataset, only using the miRNAs that are in common for the two datasets.
+    \item The AUC when you train on the first dataset and test on the second dataset.
+    \item The AUC when you train on the second dataset and test on the first dataset.
+\end{itemize}
+
+This calculation is done once for each of these four different machine learning models: logistic regression, SVM, random forest and XGBoost.
+
+
+\iffalse
+Here you will present the architecture or model that you have chosen and that is (or will be) implemented in your work. Note that putting algorithms in your report is not desirable but in certain cases these might be placed in the appendix. Code further be avoided in the report itself but may be delivered in the fashion requested by the supervisor or, in the case of masters delivery, submitted as additional documents. 
+\fi

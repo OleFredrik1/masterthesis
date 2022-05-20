@@ -1,0 +1,41 @@
+\begin{tabular}{|r|c|c|c|c|}
+\hline
+ & \bfseries LR & \bfseries SVM & \bfseries RF & \bfseries XGBoost
+\\\hline
+\bfseries LR
+ & 
+ & 
+$0.585$ 
+ & 
+$0.227$ 
+ & 
+$0.761$ 
+\\\hline
+\bfseries SVM
+ & 
+$0.585$ 
+ & 
+ & 
+$0.503$ 
+ & 
+$0.357$ 
+\\\hline
+\bfseries RF
+ & 
+$0.227$ 
+ & 
+$0.503$ 
+ & 
+ & 
+$0.092$ 
+\\\hline
+\bfseries XGBoost
+ & 
+$0.761$ 
+ & 
+$0.357$ 
+ & 
+$0.092$ 
+ & 
+\\\hline
+\end{tabular}

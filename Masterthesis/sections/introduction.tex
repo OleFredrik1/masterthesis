@@ -1,0 +1,169 @@
+\chapter{Introduction}
+\label{cha:Introduction}
+
+\iffalse
+All chapters should begin with an introduction before any sections begin. Further, each sections begins with an introduction before  subsections begin. Chapters with just one section or sections with just one sub-section, should be avoided. Think carefully about chapter and section titles as each title stand alone in the table of contents (without associated text) and should convey meaning for the contents of the chapter or section. 
+
+In all chapters and sections it is important to write clearly and concisely. Avoid repetitions and if needed, refer back to the original discussion or presentation. Each new section, subsection or paragraph should provide the reader with new information and be written in your own words. Avoid direct quotes. If you use direct quotes, unless the quote itself is very significant, you are conveying to the reader that you are unable to express this discussion or fact yourself. Such direct quotes also break the flow of the language (yours to someone else's). 
+\fi
+
+This report contains further analysis of the data on circulating miRNA and lung cancer that were collected in \citet{forprosjekt}.
+
+\section{Background and Motivation}
+\label{sec:BackgroundAndMotivation}
+
+Lung cancer is a dangerous disease that takes many lives and that has a low survival rate (see \autoref{subsec:lung_cancer}). It has been suggested by several studies that circulating miRNA can be used to diagnose lung cancer in humans \citep{circmeta}. This can be useful as it is a less resource-intensive way of diagnosing lung cancer compared to e.g. CT scans. In addition, it can be used to diagnose lung cancer earlier, which could lead to a higher survival rate.
+
+There have been done many studies on the connection between circulating miRNA and lung cancer. Some meta-analyses have found some consistency in what miRNAs are up- or down-regulated in lung cancer \citep{mirna_replicate_sequences,meta-mirna-2,meta-mirna-3,meta-mirna-4}, whilst \citet{forprosjekt} found little consistency when trying to use machine learning to find patterns across datasets. However, the analyses in \citet{forprosjekt} were very naïve. The goal of this project is to do a more thorough analysis of the data to try to find more subtle patterns in the datasets.
+
+\iffalse
+Lung cancer is common type of cancer with a low survival rate (more statistics in \autoref{subsec:lung_cancer}). One of the major reasons for the low survival rate is the late diagnosis of lung cancer. However, several studies indicate that circulating miRNA could be a non-invasive way to diagnose lung cancer \citep{circmeta}. This could lead to earlier diagnosis, and thus a higher survival rate.
+
+Having a template to work from provides a starting point. However, for a given project, a slight variation in the template may be required due to the nature of the given project. Further, the order in which the various chapters and sections will be written will also vary from project to project but will seldom start at the abstract and sequentially follow the chapters of the report. One critical reason for this, is that you need to start writing as early as possible and you will begin to write up where you are currently focusing. However, do not leave the abstract until the end. The abstract is the first thing anyone reads of an article or thesis --- after the title; and thus it is important that it is very well written. Abstracts are hard to write so create revisions throughout the course of your project as your project progresses.  
+
+This introduction to background and motivation should state where this project is situated in the field and what the key driving forces motivating this research are. However, keep this section brief as it is still part of the introduction. The motivation will be further extended in chapter~\ref{T-B}, presenting your complete state-of-the-art. 
+
+Note that this template uses italics to highlight where latin wording is inserted to represent text and the text of the template that we wish to draw your attention to. The italics themself are not an indication that such sections should use italics.  
+\fi
+
+\section{Goals and Research Questions}
+\label{sec:Goals and Research Questions}
+
+There are some goals that will guide what is done in this project. As this project is a continuation of \citet{forprosjekt}, the overall goal is the same:
+
+\begin{description}
+    \item[Goal:] Use algorithms from machine learning to predict lung cancer from levels of circulating miRNA on a larger dataset.
+\end{description}
+
+There were some attempts to achieve this goal in \citet{forprosjekt}, but the results were generally poor. However, the experiments had huge limitations, and there is thus a need for more thorough experiments in this project.
+
+One of the reasons for collecting all the datasets in \citet{forprosjekt} was that it would be easy for other researchers to build on top of the work, as they could use the transformed datasets and thus save time and effort. I would like to formalize this into a goal: make the data easily available to third parties.
+
+
+I will do some revisions on the research questions in \citet{forprosjekt} as the results in that project often revealed some implicit assumptions in the questions that were either taken for granted or not considered. The first research question was ``Are there machine learning algorithms that generally perform better at diagnosing lung cancer based on miRNA values?''. The question is interesting, but one thing that is taken for granted in the question is that it is possible to diagnose lung cancer based on miRNA data at all. It would be a reasonable assumption, as there is plenty of literature on the subject. On the other hand, almost all of the literature is studies that are based on single datasets, and \citeauthor{forprosjekt} found that the datasets were very different and that it was hard for a machine learning model that was trained on one dataset to do well on another dataset. \citeauthor{forprosjekt} also found that there was little consistency in the fold change of the different miRNAs. 
+
+Even if there is no reproducible differential expression of miRNA in cases versus controls, one could compare machine learning algorithms' internal performance in the different datasets. If one algorithm has generally better internal performance in the different datasets, one might say that this algorithm is better at diagnosing lung cancer based on miRNA-levels. However, this would not be very helpful, as there is no external diagnostic value. Thus, I will rather change the question to be more cautious.
+\iffalse
+Machine learning seems to be able to well internally in single datasets. Then one can explore whether one machine learning algorithm does well in more datasets than another machine learning algorithm, and thus proclaim one machine learning algorithm ``better'' than another at diagnosing lung cancer based on miRNAs, but that would not be very helpful as the model would not be able to generalize outside of a single dataset. Therefore, I will have a more cautious first research question this time.
+\fi
+
+\begin{description}
+    %\item[Research question 1:] Are there any evidence that there is consistent case-control patterns in miRNA expression that a machine learning algorithm could use to distinguish cases from controls?
+    \item[Research question 1:] To what extent can one find patterns in case-controls characteristics that generalize across different datasets?
+\end{description}
+
+The second research question in \citet{forprosjekt} was ``Will a combined dataset lead have better diagnostic value than each of the datasets alone?''. This question is also hard to answer given the results in \citet{forprosjekt}. One generally gets better results when doing training and testing inside one dataset, but what is the diagnostic value if this internal model has no external validity?
+
+I think this research question needs some revision. A better research question would be:
+
+\begin{description}
+    \item[Research question 2:] Using multiple datasets, to what extent can you find a model that would be able to diagnose lung cancer in a new dataset, given that the new dataset has a reasonable quality?
+\end{description}
+
+It is hard to say whether that is possible, and it is a less fundamental question than the first question in that it requires the first question to be true. However, not finding any evidence does not imply that it is false. Therefore, a lack of evidence after researching the first question does not mean that I will not research the second question. However, due to the dependencies of the questions, I will research the first question first.
+
+There are other minor research questions that might be answered through this project, but they are more interesting from a medical than a machine learning point of view:
+\begin{itemize}
+    \item What is the level of quality of the different datasets?
+    \item Do the miRNAs have the same diagnostic value across different datasets?
+    \item What miRNAs are most important for diagnosing lung cancer?
+    \item What is the effect of lung cancer on the miRNA-levels?
+\end{itemize}
+These minor questions are the same that were asked in \citet{forprosjekt}.
+
+\iffalse
+
+Different studies have pointed to different miRNA sequences for the diagnosis of lung cancer. The point of this project is to collect the datasets from the different studies and create a larger dataset. With that dataset I want to achieve the following overall goal:
+
+\begin{description}
+\item[Goal:] Use algorithms from machine learning on to predict lung cancer from levels of circulating miRNA on a larger dataset
+\end{description}
+
+Most studies on the area use simple logistic regression on the data in order to predict lung cancer based on miRNA values (e.g. \citep{Wozniak2015,niu2019}), thus leading to the question:
+
+\begin{description}
+\item[Research question 1:] Are there machine learning algorithms that generally performs better at diagnosing lung cancer based on miRNA values?
+\end{description}
+
+Logistic regression is a linear model, and thus is unable to find patterns in the data that are non-linear, which might be the case with the effect of lung cancer on miRNA-levels. There have been attempts of using more advanced machine learning methods on miRNA and lung cancer (e.g. \citep{maskinrna}). My project differs, as I try to collect all available datasets, which gives more statistical power and it will be more of a meta-analysis where datasets from different studies are compared.
+
+The datasets are slightly different in what miRNA that are measured, and what technologies are used to measure miRNA-levels. This begs the question:
+
+\begin{description}
+\item[Research question 2:] Will a combined dataset lead have better diagnostic value than each of the datasets alone?
+\end{description}
+
+On one hand one might think that the more data, the more information the machine learning algorithm have, and thus, a combined dataset is better. However, it is possible that datasets of lower quality would confuse rather than help a machine learning algorithm.
+
+Other minor questions that might be answered are:
+\begin{itemize}
+    \item What are the respective quality of the different datasets?
+    \item Do the same miRNA have the same diagnostic value across different datasets?
+    \item What miRNAs are most important for diagnosing lung cancer?
+    \item What is the effect of lung cancer on the miRNA-levels?
+\end{itemize}
+
+However, these questions are more interesting from a medical/biological point of view, than they are from a machine learning point of view, and as such will be a lower priority.
+
+\fi
+
+\iffalse
+A masters is a research project and thus there needs to be a question(s) that need answered. Such questions are often a very important part of the results that come out of the specialisation project. For those following the one year masters project, it is desirable to create such questions as early as possible as   The formation of such questions provide both an important driving force for the masters project and provide clarity as to the goals sought. However, one will expect to refine the questions and thus the final path of the masters as work progresses. However any refinements should be conducted with care so as to avoid that the original aims, and previous work are not lost.  
+It is always good to have one (or max 2) key questions and perhaps some sub questions. 
+
+\begin{description}
+\item[Goal] {\it Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
+\end{description}
+
+Your goal/objective should be described in a single sentence. In the text under you can expand on this sentence to clarify what is meant by the short goal description. 
+The goal of your work is what you are trying to achieve. This can either be the goal of your actual project or can be a broader goal that you have taken steps towards achieving. Such steps should be expressed in the research questions. 
+Note that the goal is seldom to build a system. A system is built to to enable experiments to be conducted. The research question/goal would be the goal that the system is implemented to meet.  
+
+
+\begin{description}
+\item[Research question 1] {\it Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
+\end{description}
+
+Each research question provides a sub-goal and these should be precise and clearly stated enabling the reader to match your results to the original goals. They will also form the driving force for the experimental plan. 
+
+\begin{description}
+\item[Research question 2] {\it Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
+\end{description}
+
+{\it Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam consequat pulvinar hendrerit. Praesent sit amet elementum ipsum. Praesent id suscipit est. Maecenas gravida pretium magna non }
+\fi
+
+\section{Research Method}
+\label{sec:researchMethod}
+
+This project is primarily an experimental one, as one needs to actually train models on the datasets in order to compare the outcomes. The outcomes of the machine learning model are quantitative, and thus an analytical approach will be used. The main theoretical parts of this project are the parts concerning miRNA and lung cancer, as the outcomes of the machine learning might help in understanding the effect of lung cancer on miRNA, but as these questions are not related to machine learning directly, they are not the main focus.
+\iffalse
+What methodology will you apply to address the goals: theoretic/analytic, model/abstraction or design/experiment? This section will describe the research methodology applied and the reason for this choice of research methodology.  
+\fi
+
+\iffalse
+\section{Contributions}
+\label{sec:IntroContributions}
+
+The main description of the contributions will come in chapter~\ref{cont} after the results are presented. This section just provides a brief summary of the main contributions of the work. This section can also be left out, leaving all discussions in chapter~\ref{cont}.
+
+The format of this section will generally follow the following format:
+{\it
+Donec non turpis nec neque egestas faucibus nec id neque. Etiam consectetur, odio vitae gravida tempus, diam velit sagittis turpis, a molestie ligula tellus at nunc. Nam convallis consequat vestibulum. Proin dolor neque, dapibus a pellentesque a, commodo a nibh.}
+
+\begin{enumerate}
+\item {\it Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
+\item {\it Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
+\item {\it Lorem ipsum dolor sit amet, consectetur adipiscing elit.}
+\end{enumerate}
+\fi
+
+
+\section{Report Structure}
+\label{sec:thesisStructure}
+
+Chapter \ref{cha:TheoryAndBackground} will include some theory around lung cancer and miRNA, together with theory around the machine learning and statistical methods and concepts that are used in this project. Chapter \ref{cha:Methodology} is about how the literature search was done, and technical details concerning some of the experiments. Chapter \ref{cha:ResearchAndResults} is about how the experiments were performed and their results. Finally, chapter \ref{cha:evaluationAndConclusion} is about the conclusions that are made from the results.
+
+\iffalse
+This section provides the reader with an overview of what is coming in the next chapters. You want to say more than what is explicit in the chapter name, if possible, but still keep the description short and to the point. 
+\fi
