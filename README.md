@@ -36,7 +36,7 @@ Is a shell script that automatically runs all the scripts that calculates result
 
 ## `/Webapp`
 
-This is the folder where the data visualization tool is.
+This is the folder where the data visualization tool is. A demo is hosted at [https://mirna-visualizer.netlify.app/](https://mirna-visualizer.netlify.app/).
 
 ### `/Webapp/computations`
 
