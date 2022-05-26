@@ -12,7 +12,7 @@ A directory that contains all raw data files from the different studies. Note: t
 
 ### `/Data manipulations/Notebooks`
 
-Here are the [Jupiter notebooks](https://jupyter.org/) that were used for reading in the raw data files and processing them into a common format. The name of the notebook corresponds to the name of the dataset that was processed. Running the notebooks from top to bottom will convert the dataset correctly.
+Here are the [Jupyter notebooks](https://jupyter.org/) that were used for reading in the raw data files and processing them into a common format. The name of the notebook corresponds to the name of the dataset that was processed. Running the notebooks from top to bottom will convert the dataset correctly.
 
 ### `/Data manipulations/Others`
 
