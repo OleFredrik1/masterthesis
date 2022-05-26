@@ -1,6 +1,6 @@
 # Circulating miRNA and lung cancer: - an analysis of available data
 
-This repository contains all the code that was used to create the master thesis: `Circulating miRNA and lung cancer: - an analysis of available data`. Below is a description of the repository.
+This repository contains all the code that was used to create the master thesis: `Berg, O.F.B.: Circulating miRNA and Lung Cancer: - a More Comprehensive Analysis of Available Data. NTNU Open (2022)`. Below is a description of the repository.
 
 ## `/Data manipulations`
 
@@ -28,7 +28,7 @@ This is the folder where the scripts in the `/Data manipulations/Scripts` folder
 
 ### `/Data manipulations/TransformedData`
 
-This is the folder where the notebooks in the `/Data manipulations/Notebooks` store the datasets that have been normalized and converted. Note: this folder is now empty, but the normalized data can be found at TBD.
+This is the folder where the notebooks in the `/Data manipulations/Notebooks` store the datasets that have been normalized and converted. Note: this folder is now empty, but the normalized data can be found at [https://doi.org/10.5281/zenodo.6568980](https://doi.org/10.5281/zenodo.6568980).
 
 ### `/Data manipulations/build_project.sh`
 
